@@ -1,9 +1,9 @@
-# Travel Tracker
+# Hue Pic It
 
 “Life is a sea of vibrant color. Jump in.”
 ― A.D. Posey
 
-Perhaps you have a hue in mind, but need something more evocative than just a swatch of color. Spice up your website, blog, or desktop background with a colorful image found using a color-specific image search on [COOL COLOR PICKING APP NAME](deployed site)!
+Perhaps you have a hue in mind, but need something more evocative than just a swatch of color. Spice up your website, blog, or desktop background with a colorful image found using a color-specific image search on [Hue Pic It](deployed site)!
 >>>>>>>> ADD DEPLOYED LINK
 
 Users can sign up with email and password to create a login specific the site; or login using existing Google, Facebook, or Github accounts. 
