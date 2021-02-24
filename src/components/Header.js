@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import {Navbar, NavDropdown} from 'react-bootstrap'
-// import NavDropdown from 'react-bootstrap/NavDropdown'
+import Navbar from 'react-bootstrap/Navbar'
+import NavDropdown from 'react-bootstrap/NavDropdown'
 import {Link} from 'react-router-dom'
 
 const Header = () => {
