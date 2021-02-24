@@ -8,27 +8,27 @@ import Footer from './Footer';
 import ResultsDisplay from './ResultsDisplay';
 import Error from './Error';
 import Loading from './Loading';
+import AuthProvider from '../contexts/AuthContext';
 
 const App = () => {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState('');
 
-
   return (
-    <>
-    <Header />
-    {!user && <Redirect to='/login'/>}
-    <Switch>
-      <Route path='/login' component={Login}/>
-      <Route path='/signup' component={Signup}/>
-      {user && !error && !loading && <Route exact path='/' component={Dashboard}/>}
-      <Route path='/results' component={ResultsDisplay}/>
-    </Switch>
+    <AuthProvider>
+      <Header />
+      {!user && <Redirect to='/login'/>}
+        <Switch>
+          <Route path='/login' component={Login}/>
+          <Route path='/signup' component={Signup}/>
+          {user && !error && !loading && <Route exact path='/ '  component={Dashboard}/>}
+          <Route path='/results' component={ResultsDisplay}/>
+        </Switch>
+    </AuthProvider>
     {error && <Error />}
     {loading && <Loading />}
     <Footer />
-    </>
   )
 }
 
