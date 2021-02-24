@@ -1,7 +1,8 @@
 // eslint-disable-next-line no-unused-vars
 import React, {useState, useEffect, useContext, useRef} from 'react';
 import {useAuth} from '../contexts/AuthContext';
-import { Card, Form, Button } from 'react-bootstrap';
+import { Container, Card, Form, Button } from 'react-bootstrap';
+import './Signup.css';
 
 const Signup = () => {
   const emailRef = useRef()
@@ -36,27 +37,29 @@ const Signup = () => {
 
   return (
     <>
-      <Card>
-        <Card.Body>
-          <Card.Title>Sign Up</Card.Title>
-          <Form>
-            <Form.Group id='email'>
-              <Form.Label>Email</Form.Label>
-              <Form.Control type='email' ref={emailRef} required></Form.Control>
-            </Form.Group>
-            <Form.Group id='password'>
-              <Form.Label>Password</Form.Label>
-              <Form.Control type='password' ref={passwordRef} required></Form.Control>
-            </Form.Group>
-            <Form.Group id='passwordConfirm'>
-              <Form.Label>Confirm Password</Form.Label>
-              <Form.Control type='passwordConfirm' ref={passwordConfirmRef} required></Form.Control>
-            </Form.Group>
-            <Button type='submit'>Sign Up</Button>
-          </Form>
-          <Card.Footer>Already have an account? Login</Card.Footer>
-        </Card.Body>
-      </Card>
+      <Container className='form-container'>
+        <Card>
+          <Card.Body>
+            <h2 className='form-title'>Sign Up</h2>
+            <Form>
+              <Form.Group id='email'>
+                <Form.Label>Email</Form.Label>
+                <Form.Control type='email' ref={emailRef} required></Form.Control>
+              </Form.Group>
+              <Form.Group id='password'>
+                <Form.Label>Password</Form.Label>
+                <Form.Control type='password' ref={passwordRef} required></Form.Control>
+              </Form.Group>
+              <Form.Group id='password-confirm'>
+                <Form.Label>Confirm Password</Form.Label>
+                <Form.Control type='passwordConfirm' ref={passwordConfirmRef} required></Form.Control>
+              </Form.Group>
+              <Button type='submit' className='form-submit-button'>Sign Up</Button>
+            </Form>
+            <Card.Footer className='form-footer'>Already have an account? Login</Card.Footer>
+          </Card.Body>
+        </Card>
+      </Container>
     </>
   )
 }
