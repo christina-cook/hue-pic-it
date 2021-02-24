@@ -7,24 +7,32 @@ export function useAuth(){
   return useContext(Context)
 }
 
-export function authProvider({children}) {
+export default function AuthProvider({children}) {
   const [currentUser, setCurrentUser] = useState()
   
   function signUp(email, password) {
-    auth.createUserWithEmailAndPassword(email, password)
+    return auth.createUserWithEmailAndPassword(email, password)
+  }
+
+  function login(email, password) {
+    return auth.signInWithEmailAndPassword(email, password)
   }
   
   useEffect(() => {
     const changeUserState = auth.onAuthStateChanged(user => {
-      setCurrentUser(user)
+      if (user) {
+        setCurrentUser(user)
+      }
     })
     return changeUserState
   }, [])
   
   const value = {
     currentUser,
-    signUp
+    signUp, 
+    login
   }
+
   return (
     <Context.Provider value={value}>
       { children }

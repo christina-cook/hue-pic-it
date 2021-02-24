@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, {useState, useEffect} from 'react';
 import { Switch, Route, Redirect} from 'react-router-dom';
 import Login from './Login';
@@ -8,28 +9,26 @@ import Footer from './Footer';
 import ResultsDisplay from './ResultsDisplay';
 import Error from './Error';
 import Loading from './Loading';
+import AuthProvider from '../contexts/AuthContext';
 
 const App = () => {
-  const [error, setError] = useState('');
-  const [loading, setLoading] = useState(true);
-  const [user, setUser] = useState('');
-
-
   return (
     <>
-    <Header />
-    {!user && <Redirect to='/login'/>}
-    <Switch>
-      <Route path='/login' component={Login}/>
-      <Route path='/signup' component={Signup}/>
-      {user && !error && !loading && <Route exact path='/' component={Dashboard}/>}
-      <Route path='/results' component={ResultsDisplay}/>
-    </Switch>
-    {error && <Error />}
-    {loading && <Loading />}
+    <AuthProvider>
+      <Header />
+        <Switch>
+          <Route path='/login' component={Login}/>
+          <Route path='/signup' component={Signup}/>
+          <Route exact path='/ '  component={Dashboard}/>
+          <Route path='/results' component={ResultsDisplay}/>
+        </Switch>
+    </AuthProvider>
     <Footer />
     </>
   )
 }
 
 export default App;
+
+// {error && <Error />}
+// {loading && <Loading />}
