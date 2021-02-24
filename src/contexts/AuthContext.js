@@ -11,16 +11,18 @@ export default function AuthProvider({children}) {
   const [currentUser, setCurrentUser] = useState()
   
   function signUp(email, password) {
-    auth.createUserWithEmailAndPassword(email, password)
+    return auth.createUserWithEmailAndPassword(email, password)
   }
 
   function login(email, password) {
-    auth.signInWithEmailAndPassword(email, password)
+    return auth.signInWithEmailAndPassword(email, password)
   }
   
   useEffect(() => {
     const changeUserState = auth.onAuthStateChanged(user => {
-      setCurrentUser(user)
+      if (user) {
+        setCurrentUser(user)
+      }
     })
     return changeUserState
   }, [])
@@ -30,6 +32,7 @@ export default function AuthProvider({children}) {
     signUp, 
     login
   }
+
   return (
     <Context.Provider value={value}>
       { children }

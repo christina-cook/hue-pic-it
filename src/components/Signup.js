@@ -2,7 +2,6 @@
 import React, {useState, useEffect, useContext, useRef} from 'react';
 import {useAuth} from '../contexts/AuthContext'
 
-
 const Signup = () => {
   const emailRef = useRef()
   const passwordRef = useRef()
@@ -10,24 +9,28 @@ const Signup = () => {
   // eslint-disable-next-line no-unused-vars
   const [error, setError] = useState('')
   const {signUp} = useAuth()
+  
 
 
-  const handleSubmit = (event) => {
+  async function handleSubmit(event) {
     event.preventDefault()
 
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {
       return setError('Passwords do not match')
     }
 
-    Promise.resolve(signUp(emailRef.current.value, passwordRef.current.value))
-      .then(response => {
-        let resp = response.json()
-        console.log(resp)
-        return resp
-      })
-    .catch(
-      setError('Could not make an account')
-    )  
+    try {
+      const response = await signUp(emailRef.current.value, passwordRef.current.value)
+      console.log(response)
+        //ensure no error
+        //make a new currentuser YAY DID THIS
+        //also need to go to the dashboard here
+    } catch {
+
+      //if error, do stuff about it here
+      setError(`Could not make an account`)
+      console.log('ERROR', error)
+    }
   }
 
   return (
