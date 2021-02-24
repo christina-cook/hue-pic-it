@@ -10,17 +10,23 @@ import Error from './Error';
 import Loading from './Loading';
 
 const App = () => {
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(true);
+  const [user, setUser] = useState('');
+
+
   return (
     <>
     <Header />
+    {!user && <Redirect to='/login'/>}
     <Switch>
       <Route path='/login' component={Login}/>
       <Route path='/signup' component={Signup}/>
-      <Route exact path='/' component={Dashboard}/>
+      {user && !error && !loading && <Route exact path='/' component={Dashboard}/>}
       <Route path='/results' component={ResultsDisplay}/>
-      <Route path='/error' component={Error}/>
-      <Route path='/loading' component={Loading}/>
     </Switch>
+    {error && <Error />}
+    {loading && <Loading />}
     <Footer />
     </>
   )

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react';
 
 const Signup = () => {
   return (
@@ -6,4 +6,4 @@ const Signup = () => {
   )
 }
 
-export default Signup
+export default Signup;

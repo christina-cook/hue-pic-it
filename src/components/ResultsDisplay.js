@@ -6,4 +6,4 @@ const ResultsDisplay = () => {
   )
 }
 
-export default ResultsDisplay
+export default ResultsDisplay;

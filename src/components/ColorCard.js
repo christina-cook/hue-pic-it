@@ -6,4 +6,4 @@ const ColorCard = () => {
   )
 }
 
-export default ColorCard
+export default ColorCard;

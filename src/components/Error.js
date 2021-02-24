@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react';
 
 const Error = () => {
   return (
@@ -6,4 +6,4 @@ const Error = () => {
   )
 }
 
-export default Error
+export default Error;

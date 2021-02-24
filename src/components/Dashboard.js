@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from 'react'
-import ColorCard from './ColorCard'
+import React, {useState, useEffect} from 'react';
+import ColorCard from './ColorCard';
 
 const Dashboard = () => {
   return (
@@ -7,4 +7,4 @@ const Dashboard = () => {
   )
 }
 
-export default Dashboard
+export default Dashboard;
