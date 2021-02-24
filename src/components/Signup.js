@@ -1,8 +1,11 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 
 const Signup = () => {
   return (
     <h2>Signup</h2>
+    <form>
+      
+    </form>
   )
 }
 

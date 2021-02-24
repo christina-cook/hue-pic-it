@@ -7,11 +7,15 @@ export function useAuth(){
   return useContext(Context)
 }
 
-export function authProvider({children}) {
+export function AuthProvider({children}) {
   const [currentUser, setCurrentUser] = useState()
   
   function signUp(email, password) {
     auth.createUserWithEmailAndPassword(email, password)
+  }
+
+  function login(email, password) {
+    auth.signInWithEmailAndPassword(email, password)
   }
   
   useEffect(() => {
@@ -23,7 +27,8 @@ export function authProvider({children}) {
   
   const value = {
     currentUser,
-    signUp
+    signUp, 
+    login
   }
   return (
     <Context.Provider value={value}>
