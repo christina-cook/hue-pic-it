@@ -1,0 +1,21 @@
+[debug] [2021-02-24T18:16:11.561Z] ----------------------------------------------------------------------
+[debug] [2021-02-24T18:16:11.563Z] Command:       /usr/local/Cellar/node/14.14.0/bin/node /usr/local/bin/firebase init
+[debug] [2021-02-24T18:16:11.563Z] CLI Version:   9.5.0
+[debug] [2021-02-24T18:16:11.563Z] Platform:      darwin
+[debug] [2021-02-24T18:16:11.563Z] Node Version:  v14.14.0
+[debug] [2021-02-24T18:16:11.564Z] Time:          Wed Feb 24 2021 11:16:11 GMT-0700 (Mountain Standard Time)
+[debug] [2021-02-24T18:16:11.565Z] ----------------------------------------------------------------------
+[debug] [2021-02-24T18:16:11.565Z] 
+[debug] [2021-02-24T18:16:11.570Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-02-24T18:16:11.571Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /Users/alice/turing/3module/stretch-project
+
