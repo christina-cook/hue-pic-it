@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from 'react';
 
-export const ColorCard = () => {
+const ColorCard = () => {
   return (
     <h2>Color Card</h2>
   )
 }
+
+export default ColorCard

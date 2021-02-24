@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from 'react'
 
-export const Header = () => {
+const Header = () => {
   return (
-    <h2>Header</h2>
+    <h1>Hue Pic It</h1>
   )
 }
+
+export default Header

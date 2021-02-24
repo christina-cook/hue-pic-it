@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from 'react'
 
-export const Signup = () => {
+const Signup = () => {
   return (
     <h2>Signup</h2>
   )
 }
+
+export default Signup
