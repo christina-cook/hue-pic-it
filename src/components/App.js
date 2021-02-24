@@ -10,6 +10,7 @@ import ResultsDisplay from './ResultsDisplay';
 import Error from './Error';
 import Loading from './Loading';
 import AuthProvider from '../contexts/AuthContext';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   return (
