@@ -6,14 +6,14 @@ import {Link} from 'react-router-dom';
 const Footer = () => {
   return (
     <Navbar bg="dark" expand="lg" fixed="bottom" variant="dark">
-      <Navbar.Brand as={Link} to="/about">About Site</Navbar.Brand>
-      <Navbar.Brand href="https://github.com/christina-cook">
+      <Navbar.Brand as={Link} to="/about" style={{fontFamily: "Bungee Inline, cursive"}}>About Site</Navbar.Brand>
+      <Navbar.Brand href="https://github.com/christina-cook" style={{fontFamily: "Bungee Inline, cursive"}}>
         <Image src={require('../assets/christina.jpg').default} width={40} height={40} roundedCircle fluid/> Christina
       </Navbar.Brand>
-      <Navbar.Brand href="https://github.com/srslie">
+      <Navbar.Brand href="https://github.com/srslie" style={{fontFamily: "Bungee Inline, cursive"}}>
         <Image src={require('../assets/alice.jpg').default} width={40} height={40} roundedCircle fluid/> Alice
       </Navbar.Brand>
-      <Navbar.Brand href="https://github.com/kevinhartmann23">
+      <Navbar.Brand href="https://github.com/kevinhartmann23" style={{fontFamily: "Bungee Inline, cursive"}}>
         <Image src={require('../assets/kevin.jpg').default} width={40} height={40} roundedCircle fluid/> Kevin</Navbar.Brand>
     </Navbar>
   )
