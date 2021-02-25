@@ -7,7 +7,7 @@ const About = () => {
       <Card.Img variant="top" src={require('../assets/andrewWatsonGettyImages.jpg').default} alt="" fluid/>
       <Card.Body>
         <Card.Title style={{fontFamily: "Bungee Inline, cursive"}}>About Hue Pic It</Card.Title>
-        <Card.Subtitle style={{fontFamily: "Bungee Inline, cursive"}}>What, Why, and Who</Card.Subtitle>
+        <Card.Subtitle className="mb-4" style={{fontFamily: "Bungee Inline, cursive"}}>What, Why, and Who</Card.Subtitle>
         <Card.Text className="mt=2"> This site uses <a href="https://unsplash.com/developers">Unsplash API</a> to help provide specific-colored pictures to users that might need that thematic image in their blogs or websites. From the user's home dashboard, simply click on the color that you want to search by, and images featuring that color will be populated for you to view!
         </Card.Text>
         <Card.Text>
