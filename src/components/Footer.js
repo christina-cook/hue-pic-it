@@ -2,7 +2,6 @@ import React from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Image from 'react-bootstrap/Image';
 import {Link} from 'react-router-dom';
-import "../assets/alice.jpg"
 
 const Footer = () => {
   return (
@@ -10,7 +9,7 @@ const Footer = () => {
       <Navbar.Brand as={Link} to="/about">About Site</Navbar.Brand>
       <Navbar.Brand href="https://github.com/christina-cook">Christina</Navbar.Brand>
       <Navbar.Brand href="https://github.com/srslie">
-      <Image src="../assets/alice.jpg" roundedCircle />
+      <Image src={require('../assets/alice.jpg')} roundedCircle />
         Alice</Navbar.Brand>
       <Navbar.Brand href="https://github.com/kevinhartmann23">Kevin</Navbar.Brand>
     </Navbar>
