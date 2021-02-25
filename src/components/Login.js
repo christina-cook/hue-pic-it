@@ -47,7 +47,9 @@ const Login = () => {
                 Continue with GitHub
               </Button>
             </div>
-            <Card.Footer>Need to create an account? <Link to='/signup'>Sign Up</Link></Card.Footer>
+            <Card.Footer>
+              <p className='form-footer'>Need to create an account? <Link to='/signup'>Sign Up</Link></p>
+            </Card.Footer>
           </Card.Body>
         </Card>
       </Container>

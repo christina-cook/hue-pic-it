@@ -42,7 +42,7 @@ const Signup = () => {
   return (
     <>
       <Container className='form-container'>
-        <Card>
+        <Card className='form-card'>
           <Card.Body>
             <h2 className='form-title'>Sign Up</h2>
             <Form className='signup-form'>
@@ -79,7 +79,9 @@ const Signup = () => {
                 Continue with GitHub
               </Button>
             </div>
-            <Card.Footer>Already have an account? <Link to='/login'>Log In</Link></Card.Footer>
+            <Card.Footer>
+              <p className='form-footer'>Already have an account? <Link to='/login'>Log In</Link></p>
+            </Card.Footer>
           </Card.Body>
         </Card>
       </Container>

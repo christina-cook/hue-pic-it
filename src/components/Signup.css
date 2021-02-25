@@ -20,6 +20,12 @@
   align-items: center;
 }
 
+.form-footer {
+  padding: 0 2rem;
+  margin: 0;
+  text-align: center;
+}
+
 .form-submit-button {
   width: 100%;
   margin-bottom: 1rem;
