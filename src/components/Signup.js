@@ -41,7 +41,12 @@ const Signup = () => {
         <Card>
           <Card.Body>
             <h2 className='form-title'>Sign Up</h2>
-            <Form>
+            <div className='form-auth-buttons'>
+              <Button type='submit' variant='secondary' className='google-button' disabled>Google</Button>
+              <Button type='submit' variant='info' className='facebook-button' disabled>Facebook</Button>
+              <Button type='submit' variant='dark' className='github-button' disabled>GitHub</Button>
+            </div>
+            <Form className='signup-form'>
               <Form.Group id='email'>
                 <Form.Label>Email</Form.Label>
                 <Form.Control type='email' ref={emailRef} required></Form.Control>
@@ -56,7 +61,7 @@ const Signup = () => {
               </Form.Group>
               <Button type='submit' className='form-submit-button'>Sign Up</Button>
             </Form>
-            <Card.Footer className='form-footer'>Already have an account? Login</Card.Footer>
+            <Card.Footer>Already have an account? Login</Card.Footer>
           </Card.Body>
         </Card>
       </Container>
