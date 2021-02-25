@@ -28,6 +28,8 @@ const App = () => {
             }}
           />
           <Route path='/about' component={About}/>
+          <Route path='/error' component={Error}/>
+          <Route path='/loading' component={Error}/>
         </Switch>
     </AuthProvider>
     <Footer />
