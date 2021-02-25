@@ -11,6 +11,8 @@ import Error from './Error';
 import Loading from './Loading';
 import AuthProvider from '../contexts/AuthContext';
 import 'bootstrap/dist/css/bootstrap.min.css'
+import About from './About';
+
 
 const App = () => {
   return (
@@ -20,12 +22,12 @@ const App = () => {
         <Switch>
           <Route exact path='/' component={Dashboard}/>
           <Route path='/login' component={Login}/>
-          <Route path='/signup' component={Signup}/>
           <Route path='/results/:color' 
             render={({match}) => {
               return <ResultsDisplay color={`${match.params.color}`} />
             }}
           />
+          <Route path='/about' component={About}/>
         </Switch>
     </AuthProvider>
     <Footer />
