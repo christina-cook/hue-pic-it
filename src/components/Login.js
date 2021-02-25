@@ -1,7 +1,10 @@
 /* eslint-disable no-unused-vars */
 import React, {useState, useEffect, useContext, useRef} from 'react';
-import { Container, Card, Form, Button } from 'react-bootstrap';
+import { Container, Card, Form, Button, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import google from '../assets/form/google.png';
+import facebook from '../assets/form/facebook.png';
+import github from '../assets/form/github.png';
 
 const Login = () => {
   const emailRef = useRef()
@@ -25,6 +28,25 @@ const Login = () => {
               </Form.Group>
               <Button type='submit' className='form-submit-button'>Log In</Button>
             </Form>
+            <div className='form-auth-buttons'>
+              <div className='or-container'>
+                <hr className='line'></hr>
+                <p className='or-text'>or</p>
+                <hr className='line'></hr>
+              </div>
+              <Button type='submit' variant='outline-secondary' className='google-button'>
+                <Image src={google} alt='google logo' className='button-icon'/>
+                Continue with Google
+              </Button>
+              <Button type='submit' variant='outline-secondary' className='facebook-button'>
+                <Image src={facebook} alt='facebook logo' className='button-icon'/>
+                Continue with Facebook
+              </Button>
+              <Button type='submit' variant='outline-secondary' className='github-button'>
+                <Image src={github} alt='github logo' className='button-icon'/>
+                Continue with GitHub
+              </Button>
+            </div>
             <Card.Footer>Need to create an account? <Link to='/signup'>Sign Up</Link></Card.Footer>
           </Card.Body>
         </Card>

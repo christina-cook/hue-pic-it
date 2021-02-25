@@ -1,9 +1,12 @@
 // eslint-disable-next-line no-unused-vars
 import React, {useState, useEffect, useContext, useRef} from 'react';
 import {useAuth} from '../contexts/AuthContext';
-import { Container, Card, Form, Button } from 'react-bootstrap';
+import { Container, Card, Form, Button, Image } from 'react-bootstrap';
 import './Signup.css';
 import { Link } from 'react-router-dom';
+import google from '../assets/form/google.png';
+import facebook from '../assets/form/facebook.png';
+import github from '../assets/form/github.png';
 
 const Signup = () => {
   const emailRef = useRef()
@@ -42,11 +45,6 @@ const Signup = () => {
         <Card>
           <Card.Body>
             <h2 className='form-title'>Sign Up</h2>
-            <div className='form-auth-buttons'>
-              <Button type='submit' variant='secondary' className='google-button' disabled>Google</Button>
-              <Button type='submit' variant='info' className='facebook-button' disabled>Facebook</Button>
-              <Button type='submit' variant='dark' className='github-button' disabled>GitHub</Button>
-            </div>
             <Form className='signup-form'>
               <Form.Group id='email'>
                 <Form.Label>Email</Form.Label>
@@ -62,7 +60,26 @@ const Signup = () => {
               </Form.Group>
               <Button type='submit' className='form-submit-button'>Sign Up</Button>
             </Form>
-            <Card.Footer>Already have an account? <Link to='/login'>Login</Link></Card.Footer>
+            <div className='form-auth-buttons'>
+              <div className='or-container'>
+                <hr className='line'></hr>
+                <p className='or-text'>or</p>
+                <hr className='line'></hr>
+              </div>
+              <Button type='submit' variant='outline-secondary' className='google-button'>
+                <Image src={google} alt='google logo' className='button-icon'/>
+                Continue with Google
+              </Button>
+              <Button type='submit' variant='outline-secondary' className='facebook-button'>
+                <Image src={facebook} alt='facebook logo' className='button-icon'/>
+                Continue with Facebook
+              </Button>
+              <Button type='submit' variant='outline-secondary' className='github-button'>
+                <Image src={github} alt='github logo' className='button-icon'/>
+                Continue with GitHub
+              </Button>
+            </div>
+            <Card.Footer>Already have an account? <Link to='/login'>Log In</Link></Card.Footer>
           </Card.Body>
         </Card>
       </Container>
