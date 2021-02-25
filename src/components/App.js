@@ -21,7 +21,7 @@ const App = () => {
         <Switch>
           <Route exact path='/' component={Dashboard}/>
           <Route path='/login' component={Login}/>
-          <Route path='/signup' component={Signup}/>
+          <Route path='/signup' component={Signup} />
           <Route path='/results/:color' 
             render={({match}) => {
               return <ResultsDisplay color={`${match.params.color}`} />

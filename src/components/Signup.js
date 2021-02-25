@@ -45,7 +45,7 @@ const Signup = () => {
         <Card className='form-card'>
           <Card.Body>
             <h2 className='form-title'>Sign Up</h2>
-            <Form className='signup-form'>
+            <Form className='signup-form' onSubmit={handleSubmit}>
               <Form.Group id='email'>
                 <Form.Label>Email</Form.Label>
                 <Form.Control type='email' ref={emailRef} required></Form.Control>
@@ -56,7 +56,7 @@ const Signup = () => {
               </Form.Group>
               <Form.Group id='password-confirm'>
                 <Form.Label>Confirm Password</Form.Label>
-                <Form.Control type='passwordConfirm' ref={passwordConfirmRef} required></Form.Control>
+                <Form.Control type='password' ref={passwordConfirmRef} required></Form.Control>
               </Form.Group>
               <Button type='submit' className='form-submit-button'>Sign Up</Button>
             </Form>
