@@ -10,6 +10,7 @@ import ResultsDisplay from './ResultsDisplay';
 import Error from './Error';
 import Loading from './Loading';
 import AuthProvider from '../contexts/AuthContext';
+import About from './About';
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
           <Route path='/signup' component={Signup}/>
           <Route exact path='/ '  component={Dashboard}/>
           <Route path='/results' component={ResultsDisplay}/>
+          <Route path='/about' component={About}/>
         </Switch>
     </AuthProvider>
     <Footer />
