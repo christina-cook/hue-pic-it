@@ -28,12 +28,12 @@ const Login = () => {
               </Form.Group>
               <Button type='submit' className='form-submit-button'>Log In</Button>
             </Form>
+            <div className='or-container'>
+              <hr className='line'></hr>
+              <p className='or-text'>or</p>
+              <hr className='line'></hr>
+            </div>
             <div className='form-auth-buttons'>
-              <div className='or-container'>
-                <hr className='line'></hr>
-                <p className='or-text'>or</p>
-                <hr className='line'></hr>
-              </div>
               <Button type='submit' variant='outline-secondary' className='google-button'>
                 <Image src={google} alt='google logo' className='button-icon'/>
                 Continue with Google
