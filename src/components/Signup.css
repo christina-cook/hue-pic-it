@@ -1,0 +1,65 @@
+.button-icon {
+  height: 20px;
+  width: 20px;
+  margin-right: 0.5rem;
+}
+
+.card-footer {
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+.form-auth-buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-footer {
+  padding: 0 2rem;
+  margin: 0;
+  text-align: center;
+}
+
+.form-submit-button {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.form-title {
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+.google-button,
+.facebook-button,
+.github-button {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+.line {
+  width: 45%;
+}
+
+.or-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.or-text {
+  text-align: center;
+  color: #a9a9a9;
+  margin: 0.25rem 0.5rem 0.5rem 0.5rem;
+  font-size: 0.9rem;
+}
+
+.signup-form {
+  margin-top: 0.5rem;
+}
