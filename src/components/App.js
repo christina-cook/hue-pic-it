@@ -38,4 +38,5 @@ const App = () => {
 export default App;
 
 // {error && <Error />}
+//we need to figure out how to get error and loading from auth context to conditionally render
 // {loading && <Loading />}
