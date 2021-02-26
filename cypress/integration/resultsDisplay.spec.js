@@ -15,7 +15,7 @@ describe('Results Display', () => {
   it('should practice RESTful, each url should have search term in path', () => {
     cy
       .on("url:changed", newUrl => {
-        expect(newUrl).to.contain('movies/694919')
+        expect(newUrl).to.contain('results/red')
     })
   })
 })
