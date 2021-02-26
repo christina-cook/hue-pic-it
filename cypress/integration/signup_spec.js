@@ -14,13 +14,21 @@ describe('Signup page', () => {
       .get('input[type=password]').should('exist').and('have.length', '2')
   })
 
-  it.only('Should be able to enter an email address and password into the form', () => {
+  it('Should be able to enter an email address and password into the form', () => {
     cy.get('input[type=email]').type('test@gmail.com')
       .get('input[type=password]:first').type('password')
       .get('input[type=password]:last').type('password')
   })
 
   it('Should see an error message if the passwords don\'t match', () => {
+    // test alert and error message 'Passwords do not match'
+  })
 
+  it('Should see an error message if the passwords aren\'t at least 6 characters long', () => {
+    // test alert and error message
+  })
+
+  it('Should see an error message if the an account already exists for the email entered', () => {
+    // test alert and error message
   })
 })
