@@ -32,6 +32,10 @@ describe('Signup page', () => {
     // test alert and error message
   })
 
+  it('Should redirect to the dashboard once successfully signed up', () => {
+    // test link to '/'
+  })
+
   // test email login with intercept
 
   // test Google signup functionality
@@ -40,7 +44,7 @@ describe('Signup page', () => {
 
   // test GitHub signup functionality
 
-  it.only('Should direct user to the login page if they already have an account', () => {
+  it('Should redirect user to the login page if they already have an account', () => {
     cy.get('.form-footer').should('contain', 'Already have an account? Log In')
       .get('.login-link').click().url().should('include', '/login')
   })

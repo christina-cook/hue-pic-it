@@ -14,7 +14,7 @@ const Login = () => {
   return (
     <>
       <Container className='form-container'>
-        <Card>
+        <Card className='form-card'>
           <Card.Body>
             <h2 className='form-title'>Log In</h2>
             <Form className='login-form'>
@@ -48,7 +48,7 @@ const Login = () => {
               </Button>
             </div>
             <Card.Footer>
-              <p className='form-footer'>Need to create an account? <Link to='/signup'>Sign Up</Link></p>
+              <p className='form-footer'>Need to create an account? <Link to='/signup' className='signup-link'>Sign Up</Link></p>
             </Card.Footer>
           </Card.Body>
         </Card>
