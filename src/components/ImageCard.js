@@ -9,7 +9,7 @@ const ImageCard = ({info}) => {
       <Card.Body>
         <Card.Title>{alt}</Card.Title>
         <Card.Text>{description}</Card.Text>
-        <Card.Text><span>Hex: </span>{color} </Card.Text>
+        <Card.Text><span>Hex: </span>{color}</Card.Text>
         <Card.Text><span>Photographer: </span>{photographer} </Card.Text>
       </Card.Body>
       <a href={download}>
