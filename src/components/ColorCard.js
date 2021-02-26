@@ -65,7 +65,7 @@ const ColorCard = (props) => {
   }
   
   return (
-    <Card style={{ width: '18rem', backgroundColor: `${renderColor.colors.light}` }} className='w-50'>
+    <Card style={{ width: '18rem', backgroundColor: `${renderColor.colors.light}` }} className={`${renderColor.name} w-100`}>
       <Card.Header variant="top" style={{backgroundColor: `${renderColor.colors.soft}`, color: `${renderColor.colors.strong}`}}>{renderColor.name}</Card.Header>
       <Card.Body>
         <Card.Title>{renderColor.name}</Card.Title>
@@ -73,7 +73,7 @@ const ColorCard = (props) => {
           {renderColor.text}<br/>{renderColor.subtext} 
         </Card.Text>
         <Link to={`/results/${id}`}>
-          <Button style={{color: `${renderColor.colors.strong}`, backgroundColor: `${renderColor.colors.soft}`}} className="w-100">Hue It!</Button>
+          <Button style={{ color: `${renderColor.colors.strong}`, backgroundColor: `${renderColor.colors.soft}` }} className={`${renderColor.name}-button w-100`}>Hue It!</Button>
         </Link>
       </Card.Body>
     </Card>
