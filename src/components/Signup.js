@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, {useState, useRef} from 'react';
 import {useAuth} from '../contexts/AuthContext';
-import { Container, Card, Form, Button, Image } from 'react-bootstrap';
+import { Container, Card, Form, Button, Image, Alert } from 'react-bootstrap';
 import './Signup.css';
 import { Link, Redirect } from 'react-router-dom';
 import google from '../assets/form/google.png';
@@ -27,8 +27,9 @@ const Signup = () => {
 
     try {
       await signUp(emailRef.current.value, passwordRef.current.value)
-    } catch {
-      setError(`Could not make an account`)
+      setError('')
+    } catch(error) {
+      setError(error.message)
     }
   }
 
@@ -39,6 +40,7 @@ const Signup = () => {
         <Card className='form-card'>
           <Card.Body>
             <h2 className='form-title'>Sign Up</h2>
+            {error && <Alert variant='danger'>{error}</Alert>}
             <Form className='signup-form' onSubmit={handleSubmit}>
               <Form.Group id='email'>
                 <Form.Label>Email</Form.Label>

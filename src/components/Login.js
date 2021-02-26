@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, {useState, useRef} from 'react';
 import { useAuth } from '../contexts/AuthContext';
-import { Container, Card, Form, Button, Image } from 'react-bootstrap';
+import { Container, Card, Form, Button, Image, Alert } from 'react-bootstrap';
 import { Link, Redirect } from 'react-router-dom';
 import google from '../assets/form/google.png';
 import facebook from '../assets/form/facebook.png';
@@ -19,8 +19,9 @@ const Login = () => {
 
     try {
       await login(emailRef.current.value, passwordRef.current.value)
+      setError('')
     } catch(error) {
-      setError(error.code)
+      setError(error.message)
     }
   }
 
@@ -31,6 +32,7 @@ const Login = () => {
         <Card>
           <Card.Body>
             <h2 className='form-title'>Log In</h2>
+            {error && <Alert variant='danger'>{error}</Alert>}
             <Form className='login-form' onSubmit={handleSubmit}>
               <Form.Group id='email'>
                 <Form.Label>Email</Form.Label>
