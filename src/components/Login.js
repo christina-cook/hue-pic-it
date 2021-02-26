@@ -1,7 +1,8 @@
 /* eslint-disable no-unused-vars */
-import React, {useState, useEffect, useContext, useRef} from 'react';
-import { Container, Card, Form, Button, Image } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import React, {useState, useRef} from 'react';
+import { useAuth } from '../contexts/AuthContext';
+import { Container, Card, Form, Button, Image, Alert } from 'react-bootstrap';
+import { Link, Redirect } from 'react-router-dom';
 import google from '../assets/form/google.png';
 import facebook from '../assets/form/facebook.png';
 import github from '../assets/form/github.png';
@@ -9,15 +10,30 @@ import github from '../assets/form/github.png';
 const Login = () => {
   const emailRef = useRef()
   const passwordRef = useRef()
-  const passwordConfirmRef = useRef()
+  const { login, currentUser } = useAuth()
+
+  const [error, setError] = useState('')
+
+  async function handleSubmit(event){
+    event.preventDefault()
+
+    try {
+      await login(emailRef.current.value, passwordRef.current.value)
+      setError('')
+    } catch(error) {
+      setError(error.message)
+    }
+  }
 
   return (
     <>
+      {currentUser && <Redirect to='/' />}
       <Container className='form-container'>
         <Card>
           <Card.Body>
             <h2 className='form-title'>Log In</h2>
-            <Form className='login-form'>
+            {error && <Alert variant='danger'>{error}</Alert>}
+            <Form className='login-form' onSubmit={handleSubmit}>
               <Form.Group id='email'>
                 <Form.Label>Email</Form.Label>
                 <Form.Control type='email' ref={emailRef} required></Form.Control>

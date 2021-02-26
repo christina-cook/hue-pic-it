@@ -1,6 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import Header from './Header';
-import Footer from './Footer';
 import ColorCard from './ColorCard';
 import { Container } from 'react-bootstrap';
 

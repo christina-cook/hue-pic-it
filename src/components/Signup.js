@@ -1,9 +1,9 @@
 // eslint-disable-next-line no-unused-vars
-import React, {useState, useEffect, useContext, useRef} from 'react';
+import React, {useState, useRef} from 'react';
 import {useAuth} from '../contexts/AuthContext';
-import { Container, Card, Form, Button, Image } from 'react-bootstrap';
+import { Container, Card, Form, Button, Image, Alert } from 'react-bootstrap';
 import './Signup.css';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import google from '../assets/form/google.png';
 import facebook from '../assets/form/facebook.png';
 import github from '../assets/form/github.png';
@@ -14,7 +14,7 @@ const Signup = () => {
   const passwordConfirmRef = useRef()
   // eslint-disable-next-line no-unused-vars
   const [error, setError] = useState('')
-  const {signUp} = useAuth()
+  const {signUp, currentUser} = useAuth()
 
 
 
@@ -26,25 +26,21 @@ const Signup = () => {
     }
 
     try {
-      const response = await signUp(emailRef.current.value, passwordRef.current.value)
-      console.log(response)
-        //ensure no error
-        //make a new currentuser YAY DID THIS
-        //also need to go to the dashboard here
-    } catch {
-
-      //if error, do stuff about it here
-      setError(`Could not make an account`)
-      console.log('ERROR', error)
+      await signUp(emailRef.current.value, passwordRef.current.value)
+      setError('')
+    } catch(error) {
+      setError(error.message)
     }
   }
 
   return (
     <>
+      {currentUser && <Redirect to='/'/>}
       <Container className='form-container'>
         <Card className='form-card'>
           <Card.Body>
             <h2 className='form-title'>Sign Up</h2>
+            {error && <Alert variant='danger'>{error}</Alert>}
             <Form className='signup-form' onSubmit={handleSubmit}>
               <Form.Group id='email'>
                 <Form.Label>Email</Form.Label>
