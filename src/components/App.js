@@ -28,6 +28,8 @@ const App = () => {
             }}
           />
           <Route path='/about' component={About}/>
+          <Route path='/error' component={Error}/>
+          <Route path='/loading' component={Loading}/>
         </Switch>
     </AuthProvider>
     <Footer />
@@ -38,4 +40,5 @@ const App = () => {
 export default App;
 
 // {error && <Error />}
+//we need to figure out how to get error and loading from auth context to conditionally render
 // {loading && <Loading />}
