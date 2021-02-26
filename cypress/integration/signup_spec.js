@@ -8,10 +8,16 @@ describe('Signup page', () => {
     cy.get('.form-card').find('.signup-form').should('be.visible').and('contain', 'Sign Up')
   })
 
-  it.only('Should have inputs for email, password, and password confirmation', () => {
+  it('Should have inputs for email, password, and password confirmation', () => {
     cy.get('input[type=email]').should('exist')
       .get('.form-label').should('have.length', '3')
       .get('input[type=password]').should('exist').and('have.length', '2')
+  })
+
+  it.only('Should be able to enter an email address and password into the form', () => {
+    cy.get('input[type=email]').type('test@gmail.com')
+      .get('input[type=password]:first').type('password')
+      .get('input[type=password]:last').type('password')
   })
 
   it('Should see an error message if the passwords don\'t match', () => {
