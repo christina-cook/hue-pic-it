@@ -41,7 +41,7 @@ const ResultsDisplay = ({color}) => {
   useEffect(() => {
     getImages()
   }, [])
-  
+
   return (
     <CardColumns>
       {imagesArr}

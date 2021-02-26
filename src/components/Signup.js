@@ -76,7 +76,7 @@ const Signup = () => {
               </Button>
             </div>
             <Card.Footer>
-              <p className='form-footer'>Already have an account? <Link to='/login'>Log In</Link></p>
+              <p className='form-footer'>Already have an account? <Link to='/login' className='login-link'>Log In</Link></p>
             </Card.Footer>
           </Card.Body>
         </Card>
@@ -86,3 +86,5 @@ const Signup = () => {
 }
 
 export default Signup;
+
+// {error && <Alert variant='danger'>{error}</Alert>}
