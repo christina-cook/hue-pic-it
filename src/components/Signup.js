@@ -3,7 +3,7 @@ import React, {useState, useEffect, useContext, useRef} from 'react';
 import {useAuth} from '../contexts/AuthContext';
 import { Container, Card, Form, Button, Image } from 'react-bootstrap';
 import './Signup.css';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import google from '../assets/form/google.png';
 import facebook from '../assets/form/facebook.png';
 import github from '../assets/form/github.png';
@@ -14,7 +14,7 @@ const Signup = () => {
   const passwordConfirmRef = useRef()
   // eslint-disable-next-line no-unused-vars
   const [error, setError] = useState('')
-  const {signUp} = useAuth()
+  const {signUp, currentUser} = useAuth()
 
 
 
@@ -26,8 +26,7 @@ const Signup = () => {
     }
 
     try {
-      const response = await signUp(emailRef.current.value, passwordRef.current.value)
-      console.log(response)
+      await signUp(emailRef.current.value, passwordRef.current.value)
         //ensure no error
         //make a new currentuser YAY DID THIS
         //also need to go to the dashboard here
@@ -41,6 +40,7 @@ const Signup = () => {
 
   return (
     <>
+      {currentUser && <Redirect to='/'/>}
       <Container className='form-container'>
         <Card className='form-card'>
           <Card.Body>
