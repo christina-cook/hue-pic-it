@@ -17,6 +17,11 @@ export default function AuthProvider({children}) {
   function login(email, password) {
     return auth.signInWithEmailAndPassword(email, password)
   }
+
+  function signOut() {
+    setCurrentUser()
+    return auth.signOut()
+  }
   
   useEffect(() => {
     const changeUserState = auth.onAuthStateChanged(user => {
@@ -29,6 +34,7 @@ export default function AuthProvider({children}) {
   
   const value = {
     currentUser,
+    signOut,
     signUp, 
     login
   }
