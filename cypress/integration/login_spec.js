@@ -35,7 +35,7 @@ describe('Login page', () => {
 
   // test GitHub login functionality
 
-  it.only('Should redirect user to the singup page if they don\'t have an account', () => {
+  it('Should redirect user to the singup page if they don\'t have an account', () => {
     cy.get('.form-footer').should('contain', 'Need to create an account? Sign Up')
       .get('.signup-link').click().url().should('include', '/signup')
   })
