@@ -31,4 +31,17 @@ describe('Signup page', () => {
   it('Should see an error message if the an account already exists for the email entered', () => {
     // test alert and error message
   })
+
+  // test email login with intercept
+
+  // test Google signup functionality
+
+  // test Facebook signup functionality
+
+  // test GitHub signup functionality
+
+  it.only('Should direct user to the login page if they already have an account', () => {
+    cy.get('.form-footer').should('contain', 'Already have an account? Log In')
+      .get('.login-link').click().url().should('include', '/login')
+  })
 })
