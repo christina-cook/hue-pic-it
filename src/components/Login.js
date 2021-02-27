@@ -36,7 +36,7 @@ const Login = () => {
         <Card className='form-card'>
           <Card.Body>
             <h2 className='form-title'>Log In</h2>
-            {error && <Alert variant='danger'>{error}</Alert>}
+            {error && <Alert className='error-alert' variant='danger'>{error}</Alert>}
             <Form className='login-form' onSubmit={handleSubmit}>
               <Form.Group id='email'>
                 <Form.Label>Email</Form.Label>

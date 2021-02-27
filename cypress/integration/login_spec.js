@@ -20,20 +20,31 @@ describe('Login page', () => {
   })
 
   it('Should see an error message if the email and password don\'t match', () => {
-    // test alert and error message
+    cy.get('input[type=email]').type('test@gmail.com')
+      .get('input[type=password]').type('passwo')
+      .get('.form-submit-button').click()
+      .get('.error-alert').should('have.text', 'There is no user record corresponding to this identifier. The user may have been deleted.')
   })
 
   it('Should redirect to the dashboard once successfully logged in', () => {
-    // test link to '/'
+    cy.get('input[type=email]').type('test@test.com')
+      .get('input[type=password]').type('testing')
+      .get('.form-submit-button').click()
+      
+    cy.on("url:changed", newUrl => {
+      expect(newUrl).to.contain('/')
+    })
   })
 
-  // test email login with intercept
+  it('Should allow user to signout after logging in', () => {
+    cy.get('.header').children('.logo', '.userDropdown')
+      .get('.userDropdown').click()
+      .get('.signOutLink').click()
 
-  // test Google login functionality
-
-  // test Facebook login functionality
-
-  // test GitHub login functionality
+    cy.on("url:changed", newUrl => {
+      expect(newUrl).to.contain('/login')
+    }) 
+  })
 
   it('Should redirect user to the singup page if they don\'t have an account', () => {
     cy.get('.form-footer').should('contain', 'Need to create an account? Sign Up')
