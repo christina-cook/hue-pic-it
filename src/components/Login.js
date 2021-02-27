@@ -10,7 +10,7 @@ import github from '../assets/form/github.png';
 const Login = () => {
   const emailRef = useRef()
   const passwordRef = useRef()
-  const { login, currentUser } = useAuth()
+  const { login, currentUser, googleSignInWithPopup } = useAuth()
 
   const [error, setError] = useState('')
 
@@ -50,7 +50,7 @@ const Login = () => {
               <hr className='line'></hr>
             </div>
             <div className='form-auth-buttons'>
-              <Button type='submit' variant='outline-secondary' className='google-button'>
+              <Button type='button' variant='outline-secondary' className='google-button' onClick={googleSignInWithPopup}>
                 <Image src={google} alt='google logo' className='button-icon'/>
                 Continue with Google
               </Button>

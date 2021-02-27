@@ -14,7 +14,7 @@ const Signup = () => {
   const passwordConfirmRef = useRef()
   // eslint-disable-next-line no-unused-vars
   const [error, setError] = useState('')
-  const {signUp, currentUser} = useAuth()
+  const {signUp, currentUser, googleSignInWithPopup} = useAuth()
 
 
 
@@ -62,7 +62,7 @@ const Signup = () => {
               <hr className='line'></hr>
             </div>
             <div className='form-auth-buttons'>
-              <Button type='submit' variant='outline-secondary' className='google-button'>
+              <Button type='button' variant='outline-secondary' className='google-button' onClick={googleSignInWithPopup}>
                 <Image src={google} alt='google logo' className='button-icon'/>
                 Continue with Google
               </Button>
