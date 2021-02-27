@@ -90,5 +90,3 @@ const Signup = () => {
 }
 
 export default Signup;
-
-// {error && <Alert variant='danger'>{error}</Alert>}
