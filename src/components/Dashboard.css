@@ -1,0 +1,94 @@
+.card-container {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 1rem;
+}
+
+.color-button {
+  border: none;
+  padding: 0px 20px;
+  border-radius: 100vh;
+  outline: none;
+  letter-spacing: 3px;
+  cursor: pointer;
+  margin-bottom: 40px;
+}
+
+  .bi-caret-right:hover {
+     animation: sway 1000ms infinite;
+  }
+
+  .bi-caret-right {
+    font-size: 25px;
+    vertical-align: middle;
+    transition: color 300ms ease;
+  }
+
+.pantone-card {
+  max-width: 20vw;
+  height: 25vh;
+  background: white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.color-block {
+  position: absolute;
+  top: 15px;
+  left: -50px;
+  width: 40%;
+  height: 60%;
+  border-radius: 20px;
+}
+
+.content {
+  margin-left: 22%;
+  width: 81%;
+}
+
+.title {
+  font-family: "Playfair Display", Lucida Console, serif;
+  margin: 0;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.hue {
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+
+.flavor-text {
+  margin-bottom: 10px;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 24px;
+}
+
+  i {
+    margin: 10px;
+    font-size: 20px;
+  }
+
+  i:hover {
+    cursor: pointer;
+    color: lightgray;
+  }
+
+@keyframes sway {
+  0% {
+    left: 0;
+  }
+
+  50% {
+    left: 5px;
+  }
+
+  100% {
+    left: 0;
+  }
+}
