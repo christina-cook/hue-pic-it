@@ -10,7 +10,7 @@ import github from '../assets/form/github.png';
 const Login = () => {
   const emailRef = useRef()
   const passwordRef = useRef()
-  const { login, currentUser, googleSignInWithPopup } = useAuth()
+  const { login, currentUser, signInWithPopup } = useAuth()
 
   const [error, setError] = useState('')
 
@@ -23,6 +23,10 @@ const Login = () => {
     } catch(error) {
       setError(error.message)
     }
+  }
+
+  function handleSignInWithPopup(event) {
+    signInWithPopup(event.target.id)
   }
 
   return (
@@ -50,15 +54,15 @@ const Login = () => {
               <hr className='line'></hr>
             </div>
             <div className='form-auth-buttons'>
-              <Button type='button' variant='outline-secondary' className='google-button' onClick={googleSignInWithPopup}>
+              <Button type='button' variant='outline-secondary' className='google-button' id='google' onClick={handleSignInWithPopup}>
                 <Image src={google} alt='google logo' className='button-icon'/>
                 Continue with Google
               </Button>
-              <Button type='submit' variant='outline-secondary' className='facebook-button'>
+              <Button type='submit' variant='outline-secondary' className='facebook-button' id='facebook' onClick={handleSignInWithPopup}>
                 <Image src={facebook} alt='facebook logo' className='button-icon'/>
                 Continue with Facebook
               </Button>
-              <Button type='submit' variant='outline-secondary' className='github-button'>
+              <Button type='submit' variant='outline-secondary' className='github-button' id='github' onClick={handleSignInWithPopup}>
                 <Image src={github} alt='github logo' className='button-icon'/>
                 Continue with GitHub
               </Button>

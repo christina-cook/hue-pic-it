@@ -23,9 +23,13 @@ export default function AuthProvider({children}) {
     return auth.signOut()
   }
 
-  async function googleSignInWithPopup() {
+  async function signInWithPopup(provider) {
+    let verifiedProvider
+    if (provider === 'google') {
+      verifiedProvider = googleProvider
+    }
     try {
-      const result = await auth.signInWithPopup(googleProvider)
+      const result = await auth.signInWithPopup(verifiedProvider)
       const credential = await result.credential
       const token = await credential.accessToken
       await setCurrentUser(result.user)
@@ -48,7 +52,7 @@ export default function AuthProvider({children}) {
     signOut,
     signUp,
     login,
-    googleSignInWithPopup
+    signInWithPopup
   }
 
   return (
