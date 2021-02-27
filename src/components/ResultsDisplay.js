@@ -43,9 +43,10 @@ const ResultsDisplay = ({color}) => {
   }, [])
 
   return (
-    <CardColumns>
-      {imagesArr}
-    </CardColumns>
+    <div 
+      style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gridGap: "5rem", padding: "5rem"}}>
+    {imagesArr}
+  </div>
   )
 }
 
