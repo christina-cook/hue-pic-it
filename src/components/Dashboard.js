@@ -12,7 +12,7 @@ const Dashboard = () => {
 
   return (
     <>
-      <Container className='card-container'>
+      <Container className='card-container' style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gridGap: "5rem", padding: "5rem"}}>
         {colorCards}
       </Container>
     </>
