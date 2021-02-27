@@ -44,7 +44,7 @@ const ResultsDisplay = ({color}) => {
 
   return (
     <div 
-      style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gridGap: "5rem", padding: "5rem"}}>
+      style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gridGap: "5rem", padding: "5rem", backgroundColor: "#b5b5b5"}}>
     {imagesArr}
   </div>
   )
