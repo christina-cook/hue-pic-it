@@ -27,14 +27,19 @@ export default function AuthProvider({children}) {
     let verifiedProvider
     if (provider === 'google') {
       verifiedProvider = googleProvider
+    } else if (provider === 'facebook') {
+      verifiedProvider = facebookProvider
+    } else if (provider === 'github') {
+      verifiedProvider = githubProvider
     }
+
     try {
       const result = await auth.signInWithPopup(verifiedProvider)
       const credential = await result.credential
       const token = await credential.accessToken
       await setCurrentUser(result.user)
     } catch(error) {
-        console.log('catch error', error)
+        alert(error.message)
     }
   }
 
