@@ -1,10 +1,10 @@
-.card-container {
+/* .card-container {
   margin-top: 4rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: repeat(3, 1fr);
   grid-gap: 1rem;
-}
+} */
 
 .color-button {
   border: none;
@@ -17,7 +17,7 @@
 }
 
   .bi-caret-right:hover {
-     animation: sway 1000ms infinite;
+    animation: sway 1000ms infinite;
   }
 
   .bi-caret-right {
@@ -27,8 +27,8 @@
   }
 
 .pantone-card {
-  max-width: 20vw;
-  height: 25vh;
+  /* max-width: 20vw;
+  height: 25vh; */
   background: white;
   border-radius: 20px;
   display: flex;
@@ -38,10 +38,9 @@
 
 .color-block {
   position: absolute;
-  top: 15px;
-  left: -50px;
-  width: 40%;
-  height: 60%;
+  left: -64px;
+  width: 8rem;
+  height: 100%;
   border-radius: 20px;
 }
 
