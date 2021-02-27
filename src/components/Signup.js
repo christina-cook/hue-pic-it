@@ -44,7 +44,7 @@ const Signup = () => {
         <Card className='form-card'>
           <Card.Body>
             <h2 className='form-title'>Sign Up</h2>
-            {error && <Alert variant='danger'>{error}</Alert>}
+            {error && <Alert variant='danger' className="error-alert">{error}</Alert>}
             <Form className='signup-form' onSubmit={handleSubmit}>
               <Form.Group id='email'>
                 <Form.Label>Email</Form.Label>
@@ -90,5 +90,3 @@ const Signup = () => {
 }
 
 export default Signup;
-
-// {error && <Alert variant='danger'>{error}</Alert>}

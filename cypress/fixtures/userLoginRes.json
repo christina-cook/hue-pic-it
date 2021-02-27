@@ -1,0 +1,29 @@
+{
+  "headers": {
+    "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+    "content-encoding": "gzip",
+    "content-type": "application/json; charset=UTF-8",
+    "date": "Sat, 27 Feb 2021 20:12:45 GMT",
+    "expires": "Mon, 01 Jan 1990 00:00:00 GMT",
+    "pragma": "no-cache",
+    "server": "ESF",
+    "vary": "Origin, X-Origin, Referer, Accept-Encoding"
+  },
+  "body": {
+    "kind": "identitytoolkit#GetAccountInfoResponse",
+    "users": [
+      {
+        "createdAt": "1614365311904",
+        "email": "test@test.com",
+        "emailVerified": false,
+        "lastLoginAt": "1614456742990",
+        "lastRefreshAt": "2021-02-27T20:12:22.990Z",
+        "localId": "fXjytvYBFYb87GiVxqMss7zuvuh2",
+        "passwordHash": "UkVEQUNURUQ=",
+        "passwordUpdatedAt": 1614365311904,
+        "providedUserInfo": [],
+        "validSince": "" 
+      }
+    ]
+  }
+}
