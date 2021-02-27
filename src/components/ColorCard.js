@@ -9,7 +9,10 @@ const ColorCard = (props) => {
 
   return (
     <Card style={{ backgroundColor: `${card[color].colors.light}`, boxShadow: `7px 7px 7px -5px ${card[color].colors.soft}`}} className={`${card[color].name} pantone-card`}>
-      <div className={`${card[color].name} color-block`} style={{ backgroundColor: `${card[color].colors.strong}`, boxShadow: `10px 10px 20px 0px ${card[color].colors.soft}` }}></div>
+      <svg xmlns="http://www.w3.org/2000/svg" width="120%" height="120%" style={{fill: `${card[color].colors.strong}`, boxShadow: `10px 10px 20px 0px ${card[color].colors.soft}`}} className={`${card[color].name} color-block bi bi-hexagon-fill`} viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
+      </svg>
+      {/* <div className={`${card[color].name} color-block`} style={{ backgroundColor: `${card[color].colors.strong}`, boxShadow: `10px 10px 20px 0px ${card[color].colors.soft}` }}></div> */}
       <Card.Body className="content">
         <Card.Text className={`${card[color].name} hue`} style={{ color: card[color].colors.soft }}>{card[color].colors.strong}</Card.Text>
         <Card.Title className={`${card[color].name} title`} style={{ color: `${card[color].colors.font}`}}>{card[color].name}</Card.Title>
