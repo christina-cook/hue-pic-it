@@ -1,9 +1,12 @@
 describe('Signup page', () => {
-  const baseURL = 'http://localhost:3000/signup'
-  beforeEach(() => {
-    cy.visit(baseURL)
-  })
+  const baseURL = 'http://localhost:3000/login'
 
+  it('Should redirect user to the singup page if they don\'t have an account', () => {
+    cy.visit(baseURL)
+      .get('.form-footer').should('contain', 'Need to create an account? Sign Up')
+      .get('.signup-link').click().url().should('include', '/signup')
+  })
+  
   it('Should display a signup form on the page', () => {
     cy.get('.form-card').find('.signup-form').should('be.visible').and('contain', 'Sign Up')
   })
@@ -13,36 +16,33 @@ describe('Signup page', () => {
       .get('.form-label').should('have.length', '3')
       .get('input[type=password]').should('exist').and('have.length', '2')
   })
-
-  it('Should be able to enter an email address and password into the form', () => {
-    cy.get('input[type=email]').type('test@gmail.com')
-      .get('input[type=password]:first').type('password')
-      .get('input[type=password]:last').type('password')
-  })
-
+  
   it('Should see an error message if the passwords don\'t match', () => {
-    // test alert and error message 'Passwords do not match'
+    cy.get('input[type=email]').type('test@gmail.com')
+      .get('input[type=password]').eq(0).type('passwo')
+      .get('input[type=password]').eq(1).type('password')
+      .get('.form-submit-button').click()
+      .get('.error-alert').should('have.text', 'Passwords do not match')
   })
 
-  it('Should see an error message if the passwords aren\'t at least 6 characters long', () => {
-    // test alert and error message
-  })
+  // it('Should be able to enter an email address and password into the form', () => {
+  //   cy.get('input[type=password]:first').type('rd')
+  //     .get('.form-submit-button').click()
 
-  it('Should see an error message if the an account already exists for the email entered', () => {
-    // test alert and error message
-  })
+  //   cy.on("url:changed", newUrl => {
+  //     expect(newUrl).to.contain('/')
+  //   })
+  // })
 
-  it('Should redirect to the dashboard once successfully signed up', () => {
-    // test link to '/'
-  })
+  // it('Should allow user to signout after logging in', () => {
+  //   cy.get('.header').children('.logo', '.userDropdown')
+  //     .get('.userDropdown').click()
+  //     .get('.signOutLink').click()
 
-  // test email login with intercept
-
-  // test Google signup functionality
-
-  // test Facebook signup functionality
-
-  // test GitHub signup functionality
+  //   cy.on("url:changed", newUrl => {
+  //     expect(newUrl).to.contain('/login')
+  //   })
+  // })
 
   it('Should redirect user to the login page if they already have an account', () => {
     cy.get('.form-footer').should('contain', 'Already have an account? Log In')
