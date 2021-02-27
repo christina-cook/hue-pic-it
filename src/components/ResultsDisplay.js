@@ -10,16 +10,16 @@ const ResultsDisplay = ({color}) => {
 
   if(imageData.length > 0){
     imagesArr = imageData.map(image => {
-     const {alt_description, color, description, links, id, urls, user} = image
-    const info = {
-      alt: alt_description,
-      color,
-      description,
-      id,
-      image: urls.small,
-      photographer: user.name,
-      download: links.download
-    }
+      const {alt_description, color, description, links, id, urls, user} = image
+      const info = {
+        alt: alt_description,
+        color,
+        description,
+        id,
+        image: urls.small,
+        photographer: user.name,
+        download: links.download
+      }
 
       return <ImageCard info={info} key={id} />
     })
@@ -43,10 +43,10 @@ const ResultsDisplay = ({color}) => {
   }, [])
 
   return (
-    <div 
-      style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gridGap: "5rem", padding: "5rem", backgroundColor: "#b5b5b5"}}>
+    <CardColumns
+      style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gridTemplateRows: "repeat(auto-fill, minmax(200px, 1fr))", gridGap: "1rem", padding: "5rem 2rem 5rem 2rem"}} fluid>
     {imagesArr}
-  </div>
+  </CardColumns>
   )
 }
 
