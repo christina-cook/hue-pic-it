@@ -19,13 +19,25 @@ const ImageCard = ({info}) => {
     <Card style={{border: 'none'}} key={id} id={id}>
       <Card.Img style={{objectFit: 'cover', justifyContent: 'center', height: '100%', width: '100%'}} onClick={handleClick} src={image} alt={alt} fluid/>
       <Card.ImgOverlay className={`card-info ${hidden}`} onClick={handleClick}>
-        <Card.Title>{alt}</Card.Title>
-        <Card.Text>{description}</Card.Text>
-        <Card.Text><span>Hex: </span>{color.toUpperCase()}</Card.Text>
-        <Card.Text><span>Photographer: </span>{photographer} </Card.Text>
+        <Card.Title style={{fontFamily: "Bungee Inline, cursive"}}>
+          {alt}
+        </Card.Title>
+        {/* <Card.Text>{description}</Card.Text> */}
+        <Card.Text>
+          <span>
+            <i className="bi bi-hexagon-fill" title="Hex"/>
+          </span>
+          {color.toUpperCase()}
+        </Card.Text>
+        <Card.Text>
+          <span>
+          <i className="bi bi-camera-fill" title="Photographer"/>
+          </span>
+          {photographer} 
+        </Card.Text>
       <a href={download}>
         <Button onClick={`window.location=${download}`}>
-          <i className="bi bi-download" />
+          <i className="bi bi-download" /> Download
         </Button>
       </a>
       </Card.ImgOverlay>
