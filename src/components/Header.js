@@ -28,7 +28,6 @@ const Header = () => {
       {currentUser &&
       <NavDropdown className="userDropdown" title={ !currentUser ? "User" : currentUser.email} id="basic-nav-dropdown" style={{fontFamily: "Bungee Inline, cursive"}}>
         <NavDropdown.Item className="accountLink" as={Link} to="/">Account</NavDropdown.Item>
-        <NavDropdown.Item className="favLink" as={Link} to="/">Favorites</NavDropdown.Item>
         <NavDropdown.Divider />
         <NavDropdown.Item className="signOutLink" onClick={handleClick}>Sign Out</NavDropdown.Item>
       </NavDropdown>

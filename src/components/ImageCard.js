@@ -22,7 +22,7 @@ const ImageCard = ({info}) => {
 
   return (
     <Card style={{border: 'none'}} key={id} id={id}>
-      <Card.Img style={{objectFit: 'cover', justifyContent: 'center', height: '100%', width: '100%'}} onClick={handleClick} src={image} alt={alt} fluid/>
+      <Card.Img style={{objectFit: 'cover', justifyContent: 'center', height: '100%', width: '100%'}} onClick={handleClick} src={image} alt={alt}/>
       <Card.ImgOverlay className={`card-info ${hidden}`} onClick={handleClick}>
         <Card.Title style={{fontFamily: "Bungee Inline, cursive"}}>
           {alt}

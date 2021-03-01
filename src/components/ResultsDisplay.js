@@ -51,7 +51,7 @@ const ResultsDisplay = ({color}) => {
       {error && <ErrorPage error={error}/>}
       {!error && !imageData && <Loading />}
       <CardColumns
-        style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gridTemplateRows: "repeat(auto-fill, minmax(200px, 1fr))", gridGap: "1rem", padding: "5rem 2rem 5rem 2rem"}} fluid>
+        fluid style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gridTemplateRows: "repeat(auto-fill, minmax(200px, 1fr))", gridGap: "1rem", padding: "5rem 2rem 5rem 2rem"}}>
       {imagesArr}
       </CardColumns>
     </>
