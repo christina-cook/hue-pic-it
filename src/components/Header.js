@@ -23,7 +23,6 @@ const Header = () => {
     {!currentUser && <Redirect to="/login"/>}
     <Navbar className="header" bg="dark" expand="lg" fixed="top" variant="dark">
       <Navbar.Brand className="logo" as={Link} to="/" style={{fontFamily: "Bungee Inline, cursive"}}>
-      {console.log(currentUser)}
         <i className="bi bi-hexagon"/> Hue Pic It
       </Navbar.Brand>
       {currentUser &&
@@ -33,7 +32,7 @@ const Header = () => {
         <NavDropdown.Divider />
         <NavDropdown.Item className="signOutLink" onClick={handleClick}>Sign Out</NavDropdown.Item>
       </NavDropdown>
-      }
+    }
     </Navbar>
     </>
   )
