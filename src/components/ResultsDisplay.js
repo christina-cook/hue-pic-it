@@ -10,11 +10,10 @@ const ResultsDisplay = ({color}) => {
 
   if(imageData.length > 0){
     imagesArr = imageData.map(image => {
-      const {alt_description, color, description, links, id, urls, user} = image
+      const {alt_description, color, links, id, urls, user} = image
       const info = {
         alt: alt_description,
         color,
-        description,
         id,
         image: urls.small,
         photographer: user.name,

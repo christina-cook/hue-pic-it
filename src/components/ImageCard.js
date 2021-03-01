@@ -4,7 +4,7 @@ import { Card, Button } from 'react-bootstrap';
 
 const ImageCard = ({info}) => {
   const [hidden, setHidden] = useState('hidden')
-  const {alt, color, description, id, image, photographer, download} = info
+  const {alt, color, id, image, photographer, download} = info
 
   const handleClick = event => {
     event.preventDefault()
@@ -22,7 +22,6 @@ const ImageCard = ({info}) => {
         <Card.Title style={{fontFamily: "Bungee Inline, cursive"}}>
           {alt}
         </Card.Title>
-        {/* <Card.Text>{description}</Card.Text> */}
         <Card.Text>
           <span>
             <i className="bi bi-hexagon-fill" title="Hex"/>
