@@ -12,15 +12,19 @@
 }
 
 .hidden {
-  display: none;
+ 
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 1s, opacity 0.5s linear;
 }
 
 .card-img:hover {
-  border: 2px solid black;
   cursor: pointer;
+  transition: visibility 1s, opacity 0.5s linear;
 }
 
 .card-info:hover {
   border: none;
   cursor: pointer;
+  transition: visibility 1s, opacity 0.5s linear;
 }
