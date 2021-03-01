@@ -1,0 +1,30 @@
+
+.card-info {
+  background-color: rgb(0, 0, 0, .5);
+  height: 100%;
+  width: 100%;
+  color: white;
+}
+
+.download-button {
+  background-color: white;
+  font-size: 2rem;
+}
+
+/* .bi-download {
+  background-color: black;
+} */
+
+.hidden {
+  display: none;
+}
+
+.card-img:hover {
+  border: 2px solid black;
+  cursor: pointer;
+}
+
+.card-info:hover {
+  border: none;
+  cursor: pointer;
+}
