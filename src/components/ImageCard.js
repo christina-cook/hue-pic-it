@@ -16,8 +16,8 @@ const ImageCard = ({info}) => {
   }
 
   return (
-    <Card className="cardyB" style={{border: 'none'}} key={id} id={id}>
-      <Card.Img style={{objectFit: 'cover', justifyContent: 'center', height: '100%', width: '100%', zIndex: "11"}} onClick={handleClick} src={image} alt={alt} fluid/>
+    <Card style={{border: 'none'}} key={id} id={id}>
+      <Card.Img style={{objectFit: 'cover', justifyContent: 'center', height: '100%', width: '100%'}} onClick={handleClick} src={image} alt={alt} fluid/>
       <Card.ImgOverlay className={`card-info ${hidden}`} onClick={handleClick}>
         <Card.Title>{alt}</Card.Title>
         <Card.Text>{description}</Card.Text>
