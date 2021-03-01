@@ -37,10 +37,24 @@ export default function AuthProvider({children}) {
       const result = await auth.signInWithPopup(verifiedProvider)
       const credential = await result.credential
       const token = await credential.accessToken
-      await setCurrentUser(result.user)
+      await setCurrentUser(auth.currentUser)
     } catch(error) {
         alert(error.message)
     }
+  }
+
+  function updateName(name, email, password) {
+    currentUser.updateProfile({
+      displayName: name,
+    })
+  }
+
+  function updateEmail(email) {
+    currentUser.updateEmail(email)
+  }
+
+  function updatePassword(password) {
+    currentUser.updatePassword(password)
   }
 
   useEffect(() => {
@@ -57,7 +71,10 @@ export default function AuthProvider({children}) {
     signOut,
     signUp,
     login,
-    signInWithPopup
+    signInWithPopup,
+    updateName,
+    updateEmail,
+    updatePassword
   }
 
   return (
