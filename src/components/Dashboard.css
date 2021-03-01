@@ -1,11 +1,3 @@
-/* .card-container {
-  margin-top: 4rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: repeat(3, 1fr);
-  grid-gap: 1rem;
-} */
-
 .color-button {
   border: none;
   padding: 0px 20px;
@@ -27,8 +19,6 @@
   }
 
 .pantone-card {
-  /* max-width: 20vw;
-  height: 25vh; */
   background: white;
   border-radius: 20px;
   display: flex;

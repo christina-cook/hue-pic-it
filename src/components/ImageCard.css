@@ -1,0 +1,29 @@
+.card-info {
+  background-color: rgb(0, 0, 0, .5);
+  height: 100%;
+  width: 100%;
+  color: white;
+  z-index: 1;
+}
+
+.download-button {
+  background-color: white;
+  font-size: 2rem;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 1s, opacity 0.5s linear;
+}
+
+.card-img:hover {
+  cursor: pointer;
+  transition: visibility 1s, opacity 0.5s linear;
+}
+
+.card-info:hover {
+  border: none;
+  cursor: pointer;
+  transition: visibility 1s, opacity 0.5s linear;
+}

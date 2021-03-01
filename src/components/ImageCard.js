@@ -1,20 +1,45 @@
-import React from 'react';
+import React, {useState} from 'react';
+import './ImageCard.css'
 import { Card, Button } from 'react-bootstrap';
 
 const ImageCard = ({info}) => {
-  const {alt, color, description, id, image, photographer, download} = info
+  const [hidden, setHidden] = useState('hidden')
+  const {alt, color, id, image, photographer, download} = info
+
+  const handleClick = event => {
+    event.preventDefault()
+    if (hidden) {
+      setHidden('')
+    } else {
+      setHidden('hidden')
+    }
+  }
+
   return (
-    <Card style={{ width: 'auto', height: '100%', border: 'none'}} key={id} id={id}>
-      <Card.Img style={{objectFit: 'cover', justifyContent: 'center', height: '100%', width: '100%'}} src={image} alt={alt} fluid/>
-      {/* <Card.Body style={{ height: '25%'}}>
-        <Card.Title>{alt}</Card.Title>
-        <Card.Text>{description}</Card.Text>
-        <Card.Text><span>Hex: </span>{color.toUpperCase()}</Card.Text>
-        <Card.Text><span>Photographer: </span>{photographer} </Card.Text>
-      </Card.Body> */}
-      {/* <a href={download}>
-        <Button style={{backgroundColor: 'white', fontSize: '2rem'}}>⬇️</Button>
-      </a> */}
+    <Card style={{border: 'none'}} key={id} id={id}>
+      <Card.Img style={{objectFit: 'cover', justifyContent: 'center', height: '100%', width: '100%'}} onClick={handleClick} src={image} alt={alt} fluid/>
+      <Card.ImgOverlay className={`card-info ${hidden}`} onClick={handleClick}>
+        <Card.Title style={{fontFamily: "Bungee Inline, cursive"}}>
+          {alt}
+        </Card.Title>
+        <Card.Text>
+          <span>
+            <i className="bi bi-hexagon-fill" title="Hex"/>
+          </span>
+          {color.toUpperCase()}
+        </Card.Text>
+        <Card.Text>
+          <span>
+          <i className="bi bi-camera-fill" title="Photographer"/>
+          </span>
+          {photographer} 
+        </Card.Text>
+      <a href={download}>
+        <Button onClick={`window.location=${download}`}>
+          <i className="bi bi-download" /> Download
+        </Button>
+      </a>
+      </Card.ImgOverlay>
     </Card>
   )
 }
