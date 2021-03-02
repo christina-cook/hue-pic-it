@@ -31,9 +31,9 @@ const Account = () => {
         {success && <Alert variant='success' className="success-alert">{success}</Alert>}
         <Form.Group id='display-name'>
           <Form.Label>Name</Form.Label>
-          <Form.Control type='text' placeholder={currentName} ref={name}></Form.Control>
+          <Form.Control className='update-name' type='text' placeholder={currentName} ref={name}></Form.Control>
         </Form.Group>
-        <Button type='submit'>Update Account</Button>
+        <Button className='account-button' type='submit'>Update Account</Button>
       </Form>
   )
 }
