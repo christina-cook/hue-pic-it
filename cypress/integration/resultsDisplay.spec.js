@@ -1,6 +1,7 @@
+const baseUrl = 'http://localhost:3000/'
+const apiUrl = 'https://api.unsplash.com/search/photos?query=red&client_id=TxxKnYwWjOR3kXQ-IUBvuGO3W_mryJB4xTIrlcXAH_Q'
+
 describe('Results Display', () => {
-  const baseUrl = 'http://localhost:3000/'
-  const apiUrl = 'https://api.unsplash.com/search/photos/?query=red&client_id=TxxKnYwWjOR3kXQ-IUBvuGO3W_mryJB4xTIrlcXAH_Q'
 
   it('should log in to test account', () => {
     cy
@@ -14,7 +15,6 @@ describe('Results Display', () => {
   it('should display image cards on click of button', () => {
     cy
       .intercept('GET', apiUrl, { fixture: 'imageData' })
-      
     cy
       .get('.Red-button').click()
 
@@ -59,10 +59,27 @@ describe('Individual Card', () => {
       .get('.card a').should('have.attr', 'href').should('eq', "https://unsplash.com/photos/Ar6eXpQaCwk/download")
   })
 
-  it('Should allow user to signout from results display', () => {
+})
+
+describe('Error Display', () => {
+  it('Should display an error page on when on a failed fetch or whenever error is set in context', () => {
+    cy
+      .intercept('GET', apiUrl, { statusCode: 400 })
+    
+    cy.visit(baseUrl)
+    
+    cy
+      .get('.Red-button').click()
+      .get('.error').children('.errorTitle', '.errorMessage')
+      .get('.errorTitle').children('.bi-emoji-dizzy-fill')
+      .get('.errorMessage').children('.contact')
+      .get('.contact')
+  })
+
+  it('Should allow user to signout from error display', () => {
     cy.get('.header').children('.logo', '.userDropdown')
       .get('.userDropdown').click()
       .get('.signOutLink').click()
-  })
+})
 
 })
