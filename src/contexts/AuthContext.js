@@ -9,6 +9,7 @@ export function useAuth(){
 
 export default function AuthProvider({children}) {
   const [currentUser, setCurrentUser] = useState()
+  const [displayName, setDisplayName] = useState('User')
 
   function signUp(email, password) {
     return auth.createUserWithEmailAndPassword(email, password)
@@ -37,16 +38,24 @@ export default function AuthProvider({children}) {
       const result = await auth.signInWithPopup(verifiedProvider)
       const credential = await result.credential
       const token = await credential.accessToken
-      await setCurrentUser(result.user)
+      await setCurrentUser(auth.currentUser)
     } catch(error) {
         alert(error.message)
     }
+  }
+
+  function updateName(name) {
+    auth.currentUser.updateProfile({
+      displayName: name,
+    })
+    setDisplayName(name)
   }
 
   useEffect(() => {
     const changeUserState = auth.onAuthStateChanged(user => {
       if (user) {
         setCurrentUser(user)
+        setDisplayName(user.displayName)
       }
     })
     return changeUserState
@@ -57,7 +66,9 @@ export default function AuthProvider({children}) {
     signOut,
     signUp,
     login,
-    signInWithPopup
+    signInWithPopup,
+    updateName,
+    displayName
   }
 
   return (

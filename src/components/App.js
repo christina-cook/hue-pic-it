@@ -12,6 +12,7 @@ import Loading from './Loading';
 import AuthProvider from '../contexts/AuthContext';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import About from './About';
+import Account from './Account';
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
           <Route path='/about' component={About}/>
           <Route path='/error' component={Error}/>
           <Route path='/loading' component={Loading}/>
+          <Route path='/account' component={Account}/>
         </Switch>
     </AuthProvider>
     <Footer />

@@ -2,13 +2,16 @@ import React, {useState, useEffect} from 'react';
 import ImageCard from './ImageCard'
 import unsplash from '../contexts/ApiCalls'
 import { CardColumns } from 'react-bootstrap';
+import ErrorPage from './Error'
+import Loading from './Loading'
+
 
 const ResultsDisplay = ({color}) => {
   const [imageData, setImageData] = useState([])
   const [error, setError] = useState('')
   let imagesArr
 
-  if(imageData.length > 0){
+  if(imageData) {
     imagesArr = imageData.map(image => {
       const {alt_description, color, links, id, urls, user} = image
       const info = {
@@ -30,10 +33,12 @@ const ResultsDisplay = ({color}) => {
     try {
       const response = await unsplash.fetchSingleColor(color)
       const images = await response.json()
-      console.log(images.results)
+      if (images.errors) {
+        throw new Error(images.errors)
+      }
       setImageData(images.results)
-    } catch(error) {
-      setError(error)
+    } catch(e) {
+      setError(e.message)
     }
   }
 
@@ -42,10 +47,14 @@ const ResultsDisplay = ({color}) => {
   }, [])
 
   return (
-    <CardColumns
-      style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gridTemplateRows: "repeat(auto-fill, minmax(200px, 1fr))", gridGap: "1rem", padding: "5rem 2rem 5rem 2rem"}} fluid>
-    {imagesArr}
-  </CardColumns>
+    <>
+      {error && <ErrorPage error={error}/>}
+      {!error && !imageData && <Loading />}
+      <CardColumns
+        fluid style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gridTemplateRows: "repeat(auto-fill, minmax(200px, 1fr))", gridGap: "1rem", padding: "5rem 2rem 5rem 2rem"}}>
+      {imagesArr}
+      </CardColumns>
+    </>
   )
 }
 
