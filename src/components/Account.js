@@ -5,15 +5,29 @@ import {useAuth} from '../contexts/AuthContext';
 
 const Account = () => {
   const {currentUser, updateName, updateEmail, updatePassword} = useAuth()
-  const [name, setName] = useState(currentUser.displayName)
+  const name = useRef()
+  const currentName = currentUser.displayName ? currentUser.displayName : "Your Name Here"
+  // const [name, setName] = useState(currentUser.displayName)
+
+
+  async function handleSubmit(event){
+    event.preventDefault()
+    console.log(name)
+    try {
+      const newName = await updateName(name.current.value)
+      await console.log(newName)
+    } catch {
+
+    }
+  }
 
   return (
-      <Form className='account-info'>
+      <Form className='account-info' style={{marginTop: '5rem', padding: '1rem'}} onSubmit={handleSubmit}>
         <Form.Group id='display-name'>
           <Form.Label>Name</Form.Label>
-          <Form.Control type='text' value={name} onChange={setName}></Form.Control>
+          <Form.Control type='text' placeholder={currentName} ref={name}></Form.Control>
         </Form.Group>
-        <Button>Update Account</Button>
+        <Button type='submit'>Update Account</Button>
       </Form>
   )
 }

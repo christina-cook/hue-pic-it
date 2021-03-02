@@ -43,18 +43,18 @@ export default function AuthProvider({children}) {
     }
   }
 
-  function updateName(name, email, password) {
-    currentUser.updateProfile({
+  function updateName(name) {
+    auth.currentUser.updateProfile({
       displayName: name,
     })
   }
 
   function updateEmail(email) {
-    currentUser.updateEmail(email)
+    auth.currentUser.updateEmail(email)
   }
 
   function updatePassword(password) {
-    currentUser.updatePassword(password)
+    auth.currentUser.updatePassword(password)
   }
 
   useEffect(() => {
