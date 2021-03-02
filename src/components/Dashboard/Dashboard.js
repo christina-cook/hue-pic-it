@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import ColorCard from './ColorCard'
-import cards from './colorCardInfo'
+import cards from '../../assets/colorCardInfo'
 import './Dashboard.css'
 import { Container } from 'react-bootstrap';
 
