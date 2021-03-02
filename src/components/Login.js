@@ -34,6 +34,9 @@ const Login = () => {
       <Container className='form-container'>
         <Card className='form-card'>
           <Card.Body>
+            <h1 className="logo" style={{fontFamily: "Bungee Inline, cursive", textAlign: "center"}}>
+              Hue Pic It
+            </h1>
             <h2 className='form-title'>Log In</h2>
             {error && <Alert className='error-alert' variant='danger'>{error}</Alert>}
             <Form className='login-form' onSubmit={handleSubmit}>

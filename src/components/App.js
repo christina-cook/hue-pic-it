@@ -33,8 +33,8 @@ const App = () => {
           <Route path='/loading' component={Loading}/>
           <Route path='/account' component={Account}/>
         </Switch>
+        <Footer />
     </AuthProvider>
-    <Footer />
     </>
   )
 }
