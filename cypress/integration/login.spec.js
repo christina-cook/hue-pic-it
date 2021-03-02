@@ -37,4 +37,9 @@ describe('Login page', () => {
     cy.get('.form-footer').should('contain', 'Need to create an account? Sign Up')
       .get('.signup-link').click().url().should('include', '/signup')
   })
+
+  it('Should redirect user back to login page if they already have an account', () => {
+    cy.get('.form-footer').should('contain', 'Already have an account? Log In')
+      .get('.login-link').click().url().should('include', '/login')
+  })
 })
