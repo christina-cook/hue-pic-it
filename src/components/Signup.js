@@ -42,6 +42,9 @@ const Signup = () => {
       <Container className='form-container'>
         <Card className='form-card'>
           <Card.Body>
+            <h1 className="logo" style={{fontFamily: "Bungee Inline, cursive", textAlign: "center"}}>
+              Hue Pic It
+            </h1>
             <h2 className='form-title'>Sign Up</h2>
             {error && <Alert variant='danger' className="error-alert">{error}</Alert>}
             <Form className='signup-form' onSubmit={handleSubmit}>

@@ -28,6 +28,7 @@ const Header = () => {
   return (
     <>
     {!currentUser && <Redirect to="/login"/>}
+    {currentUser && 
     <Navbar className="header" bg="dark" expand="lg" fixed="top" variant="dark">
       <Navbar.Brand className="logo" as={Link} to="/" style={{fontFamily: "Bungee Inline, cursive"}}>
         <i className="bi bi-hexagon"/> Hue Pic It
@@ -40,6 +41,7 @@ const Header = () => {
       </NavDropdown>
     }
     </Navbar>
+    }
     </>
   )
 }
