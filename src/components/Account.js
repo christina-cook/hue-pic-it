@@ -1,13 +1,17 @@
 import React, {useState, useRef} from 'react';
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, Alert } from 'react-bootstrap';
 import {useAuth} from '../contexts/AuthContext';
 
 
 const Account = () => {
-  const {currentUser, updateName, updateEmail, updatePassword} = useAuth()
+  const {currentUser, updateName, displayName, updateEmail, updatePassword} = useAuth()
   const name = useRef()
-  const currentName = currentUser.displayName ? currentUser.displayName : "Your Name Here"
-  // const [name, setName] = useState(currentUser.displayName)
+  let currentName
+  const [success, setSuccess] = useState('')
+
+  if (currentUser) {
+    currentName = displayName ? displayName : "Your Name Here"
+  }
 
 
   async function handleSubmit(event){
@@ -15,14 +19,16 @@ const Account = () => {
     console.log(name)
     try {
       const newName = await updateName(name.current.value)
-      await console.log(newName)
-    } catch {
+      await setSuccess('Your account has been updated!')
+    } catch(err) {
 
     }
   }
 
   return (
       <Form className='account-info' style={{marginTop: '5rem', padding: '1rem'}} onSubmit={handleSubmit}>
+        <h2>Account Information</h2>
+        {success && <Alert variant='success' className="success-alert">{success}</Alert>}
         <Form.Group id='display-name'>
           <Form.Label>Name</Form.Label>
           <Form.Control type='text' placeholder={currentName} ref={name}></Form.Control>

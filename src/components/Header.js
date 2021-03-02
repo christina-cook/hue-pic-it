@@ -6,11 +6,11 @@ import { useAuth } from '../contexts/AuthContext';
 import {Link, Redirect} from 'react-router-dom';
 
 const Header = () => {
-  const {signOut, currentUser} = useAuth()
+  const {signOut, currentUser, displayName} = useAuth()
   let userName
 
   if(currentUser){
-    userName = currentUser.displayName ? currentUser.displayName : currentUser.email
+    userName = displayName ? displayName : currentUser.email
   } else {
     userName = "User"
   }

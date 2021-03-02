@@ -9,6 +9,7 @@ export function useAuth(){
 
 export default function AuthProvider({children}) {
   const [currentUser, setCurrentUser] = useState()
+  const [displayName, setDisplayName] = useState('User')
 
   function signUp(email, password) {
     return auth.createUserWithEmailAndPassword(email, password)
@@ -47,6 +48,7 @@ export default function AuthProvider({children}) {
     auth.currentUser.updateProfile({
       displayName: name,
     })
+    setDisplayName(name)
   }
 
   function updateEmail(email) {
@@ -61,6 +63,7 @@ export default function AuthProvider({children}) {
     const changeUserState = auth.onAuthStateChanged(user => {
       if (user) {
         setCurrentUser(user)
+        setDisplayName(user.displayName)
       }
     })
     return changeUserState
@@ -74,7 +77,8 @@ export default function AuthProvider({children}) {
     signInWithPopup,
     updateName,
     updateEmail,
-    updatePassword
+    updatePassword,
+    displayName
   }
 
   return (
