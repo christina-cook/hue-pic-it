@@ -18,9 +18,9 @@ describe('Signup page', () => {
   })
 
   it('Should see an error message if the passwords don\'t match', () => {
-    cy.get('input[type=email]').type('test@gmail.com')
-      .get('input[type=password]').eq(0).type('passwo')
-      .get('input[type=password]').eq(1).type('password')
+    cy.get('input[type=email]').type('newuser@test.com')
+      .get('input[type=password]').eq(0).type('password')
+      .get('input[type=password]').eq(1).type('passwor')
       .get('.form-submit-button').click()
       .get('.error-alert').should('have.text', 'Passwords do not match')
   })

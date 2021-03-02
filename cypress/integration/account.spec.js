@@ -19,4 +19,10 @@ describe('Account', () => {
       .get('.account-button').click()
       .get('.success-alert').should('contain', 'Your account has been updated!')
   })
+
+  it('Should be able to log out from the account page', () => {
+    cy.get('.header').children('.logo', '.userDropdown')
+      .get('.userDropdown').click()
+      .get('.signOutLink').click().url().should('contain', '/login')
+  })
 })
