@@ -2,12 +2,14 @@
 /// <reference types="cypress" />
 
 describe('Header', () => {
-  it('Should display header on top of page with logo link to home', () => {
+  it('Should login',  () => {
     cy.visit('http://localhost:3000/')
     cy.get('input[type=email]').type('test@test.com')
     .get('input[type=password]').type('testing')
     .get('.form-submit-button').click()
-      cy.url().should('include', '/')
+  })
+
+  it('Should display header on top of page with logo link to home', () => {
     cy.get('.header').children('.logo', '.userDropdown')
       .get('.logo').children('.bi-hexagon').click()
       cy.url().should('eq', 'http://localhost:3000/')
@@ -20,6 +22,7 @@ describe('Header', () => {
   })
   it('Should have a dropdown to sign out', () => {
     cy.get('.header').children('.logo', '.userDropdown')
+    .get('.userDropdown').click()
       .get('.dropdown-divider')
       .get('.signOutLink').should('have.text', 'Sign Out').click({force: true})
       cy.url().should('include', '/login')
