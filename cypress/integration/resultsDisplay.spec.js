@@ -2,12 +2,20 @@ describe('Results Display', () => {
   const baseUrl = 'http://localhost:3000/'
   const apiUrl = 'https://api.unsplash.com/search/photos/?query=red&client_id=TxxKnYwWjOR3kXQ-IUBvuGO3W_mryJB4xTIrlcXAH_Q'
 
+  it('should log in to test account', () => {
+    cy
+      .visit(baseUrl)
+      .get('input[type=email]').type('test@gmail.com')
+      .get('input[type=password]').type('password')
+      .get('.form-submit-button').click()
+  })
+
+  
   it('should display image cards on click of button', () => {
     cy
       .intercept('GET', apiUrl, { fixture: 'imageData' })
       
     cy
-      .visit(baseUrl)
       .get('.Red-button').click()
 
   })
@@ -26,19 +34,35 @@ describe('Individual Card', () => {
       .get('.card img')
   })
 
+  it('should display more info on a picture when user clicks', () => {
+    cy
+      .get('.card:first').click()
+  })
+
   it('should have a title', () => {
     cy
-      .get('.card-title').should('have.text', 'puddle on ground')
+      .get('.card-title:first').should('have.text', 'puddle on ground')
   })
 
   it('should have a hue option', () => {
     cy
-      .get('.card-text').eq(1).should('have.text', 'Hex: #262626')
+      .get('.card-text').eq(0).should('have.text', '#262626')
+  })
+
+  it('should display credit to photographer', () => {
+    cy
+      .get('.card-text').eq(1).should('have.text', 'Ed Leszczynskl')
   })
 
   it('should allow a user to visit a downloadlink', () => {
     cy
       .get('.card a').should('have.attr', 'href').should('eq', "https://unsplash.com/photos/Ar6eXpQaCwk/download")
+  })
+
+  it('Should allow user to signout from results display', () => {
+    cy.get('.header').children('.logo', '.userDropdown')
+      .get('.userDropdown').click()
+      .get('.signOutLink').click()
   })
 
 })

@@ -13,7 +13,6 @@ const ColorCard = (props) => {
       <path fill-rule="evenodd" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
 
       </svg>
-      {/* <div className={`${card[color].name} color-block`} style={{ backgroundColor: `${card[color].colors.strong}`, boxShadow: `10px 10px 20px 0px ${card[color].colors.soft}` }}></div> */}
       <Card.Body className="content">
         <Card.Text className={`${card[color].name} hue`} style={{ color: card[color].colors.soft }}>{card[color].colors.strong}</Card.Text>
         <Card.Title className={`${card[color].name} title`} style={{ color: `${card[color].colors.font}`, fontFamily: "Bungee Inline, cursive"}}>{card[color].name}</Card.Title>
