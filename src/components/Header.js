@@ -7,6 +7,13 @@ import {Link, Redirect} from 'react-router-dom';
 
 const Header = () => {
   const {signOut, currentUser} = useAuth()
+  let userName
+
+  if(currentUser){
+    userName = currentUser.displayName ? currentUser.displayName : currentUser.email
+  } else {
+    userName = "User"
+  }
 
   async function handleClick(event) {
     event.preventDefault()
@@ -26,7 +33,7 @@ const Header = () => {
         <i className="bi bi-hexagon"/> Hue Pic It
       </Navbar.Brand>
       {currentUser &&
-      <NavDropdown className="userDropdown" title={ !currentUser ? "User" : currentUser.email} id="basic-nav-dropdown" style={{fontFamily: "Bungee Inline, cursive"}}>
+      <NavDropdown className="userDropdown" title={userName} id="basic-nav-dropdown" style={{fontFamily: "Bungee Inline, cursive"}}>
         <NavDropdown.Item className="accountLink" as={Link} to="/account">Account</NavDropdown.Item>
         <NavDropdown.Divider />
         <NavDropdown.Item className="signOutLink" onClick={handleClick}>Sign Out</NavDropdown.Item>
