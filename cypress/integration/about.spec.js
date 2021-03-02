@@ -3,7 +3,12 @@
 
 describe('About', () => {
   it('Should display information related to the site when clicked', () => {
-    cy.visit('http://localhost:3000/about')
+    cy.visit('http://localhost:3000/')
+    cy.get('input[type=email]').type('test@test.com')
+    .get('input[type=password]').type('testing')
+    .get('.form-submit-button').click()
+      .get('.aboutLink').click()
+      cy.url().should('include', '/about')
     cy.get('.about').children('.aboutTopImage', '.aboutInfo', '.aboutBottomImage')
       .get('.aboutTopImage').should('have.attr', 'src').should('include', '/static/media/condeNextTravelerImage.7c619ece.jpg')
       .get('.aboutBottomImage').should('have.attr', 'src').should('include', '/static/media/andrewWatsonGettyImages.d005101d.jpg')
