@@ -2,10 +2,12 @@
 /// <reference types="cypress" />
 
 describe('Footer', () => {
-  beforeEach(() => {
-    cy.visit('http://localhost:3000')
+  it('Should login',  () => {
+    cy.visit('http://localhost:3000/')
+    cy.get('input[type=email]').type('test@test.com')
+    .get('input[type=password]').type('testing')
+    .get('.form-submit-button').click()
   })
-
   it('Should display footer on bottom of page with links to about', () => {
     cy.get('.footer').children('.aboutLink', '.christina', '.alice', '.kevin')
       .get('.aboutLink').click()
@@ -26,5 +28,12 @@ describe('Footer', () => {
   it('Should link to Kevin\'s github', () => {
     cy.get('.footer').children('.kevin')
       .get('.kevin').should('have.attr', 'href').should('eq', 'https://github.com/kevinhartmann23')
+      cy.get('.header')
+  })
+
+  it('Should sign out', () => {
+    cy.get('.userDropdown').click()
+      .get('.signOutLink').click({force: true})
+      cy.url().should('include', '/login')
   })
 })
