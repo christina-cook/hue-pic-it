@@ -8,6 +8,10 @@
   margin-bottom: 40px;
 }
 
+.color-button:hover {
+  color: white;
+}
+
   .bi-caret-right:hover {
     animation: sway 1000ms infinite;
   }
@@ -65,7 +69,7 @@
 
   i:hover {
     cursor: pointer;
-    color: lightgray;
+    color: white;
   }
 
 @keyframes sway {
