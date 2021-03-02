@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {Card, i} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
-import card from './colorCardInfo'
+import card from '../../assets/colorCardInfo'
 
 const ColorCard = (props) => {
   const { id } = props

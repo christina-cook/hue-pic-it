@@ -1,12 +1,12 @@
 // eslint-disable-next-line no-unused-vars
 import React, {useState, useRef} from 'react';
-import {useAuth} from '../contexts/AuthContext';
+import {useAuth} from '../../contexts/AuthContext';
 import { Container, Card, Form, Button, Image, Alert } from 'react-bootstrap';
 import './Signup.css';
 import { Link, Redirect } from 'react-router-dom';
-import google from '../assets/form/google.png';
-import facebook from '../assets/form/facebook.png';
-import github from '../assets/form/github.png';
+import google from '../../assets/form/google.png';
+import facebook from '../../assets/form/facebook.png';
+import github from '../../assets/form/github.png';
 
 const Signup = () => {
   const emailRef = useRef()

@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import ImageCard from './ImageCard'
-import unsplash from '../contexts/ApiCalls'
+import unsplash from '../../contexts/ApiCalls'
 import { CardColumns } from 'react-bootstrap';
-import ErrorPage from './Error'
-import Loading from './Loading'
+import ErrorPage from '../Error'
+import Loading from '../Loading'
 
 
 const ResultsDisplay = ({color}) => {
