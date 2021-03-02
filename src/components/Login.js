@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, {useState, useRef} from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { Container, Card, Form, Button, Image, Alert } from 'react-bootstrap';

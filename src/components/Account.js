@@ -39,23 +39,3 @@ const Account = () => {
 }
 
 export default Account
-
-// const [email, setEmail] = useState(currentUser.email)
-// const [password, setPassword] = useState()
-
-// <Form.Group id='email'>
-//   <Form.Label>Email</Form.Label>
-//   <Form.Control type='email' value={email} onChange={setEmail}></Form.Control>
-// </Form.Group>
-// <Form.Group id='old-password'>
-//   <Form.Label>Old Password</Form.Label>
-//   <Form.Control type='password' ref={oldPasswordRef}></Form.Control>
-// </Form.Group>
-// <Form.Group id='password'>
-//   <Form.Label>New Password</Form.Label>
-//   <Form.Control type='password' value={password} onChange={setPassword}></Form.Control>
-// </Form.Group>
-// <Form.Group id='password'>
-//   <Form.Label>Confirm New Password</Form.Label>
-//   <Form.Control type='password' value={password} onChange={setPassword}></Form.Control>
-// </Form.Group>

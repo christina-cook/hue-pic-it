@@ -21,7 +21,7 @@ const ColorCard = (props) => {
           {card[color].text}
         </Card.Text>
         <Link to={`/results/${id}`}>
-          <button style={{ color: `${card[color].colors.font}`, backgroundColor: `${card[color].colors.soft}`, fontFamily: "Bungee Inline, cursive" }} className={`${card[color].name}-button color-button`}>
+          <button style={{backgroundColor: `${card[color].colors.soft}`, fontFamily: "Bungee Inline, cursive" }} className={`${card[color].name}-button color-button`}>
             Pic It!
             <i class="bi bi-caret-right" />
           </button>

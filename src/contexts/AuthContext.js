@@ -51,14 +51,6 @@ export default function AuthProvider({children}) {
     setDisplayName(name)
   }
 
-  function updateEmail(email) {
-    auth.currentUser.updateEmail(email)
-  }
-
-  function updatePassword(password) {
-    auth.currentUser.updatePassword(password)
-  }
-
   useEffect(() => {
     const changeUserState = auth.onAuthStateChanged(user => {
       if (user) {
@@ -76,8 +68,6 @@ export default function AuthProvider({children}) {
     login,
     signInWithPopup,
     updateName,
-    updateEmail,
-    updatePassword,
     displayName
   }
 

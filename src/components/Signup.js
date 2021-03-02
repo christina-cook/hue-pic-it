@@ -12,7 +12,6 @@ const Signup = () => {
   const emailRef = useRef()
   const passwordRef = useRef()
   const passwordConfirmRef = useRef()
-  // eslint-disable-next-line no-unused-vars
   const [error, setError] = useState('')
   const {signUp, currentUser, signInWithPopup} = useAuth()
 
