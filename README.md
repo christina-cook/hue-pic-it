@@ -54,6 +54,8 @@ This app was coded by [Christina Cook](https://github.com/christina-cook), [Kevi
 
 ![GIF of color photos](https://media.giphy.com/media/gjh7IrmqcPouI2HLrC/giphy.gif)
 
-![GIF of about page](https://media.giphy.com/media/vYLoLMsL7txVbC793r/giphy.gif)
-
 ![GIF of responsive display](https://media.giphy.com/media/EUUfWU4HDlkLHXzNaZ/giphy.gif)
+
+![GIF of error messages on login](https://media.giphy.com/media/9Uda23kwMVoVFDeeaT/giphy.gif)
+
+![GIF of error messages on signup](https://media.giphy.com/media/ux66OxydPHtGvqOG0W/giphy.gif)
