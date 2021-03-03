@@ -39,8 +39,7 @@ In order to contribute, test, or run files locally please follow these instructi
 - Cypress Testing: `npx cypress open`
 - A local environment will be required to run this app locally: 
 - Add `.env.local` file to main directory outside of source
-- Copy and Paste the code below into local environment file
-<details>
+- Copy and Paste the code below into local environment file <details>
   <Summary>Local Environment Code</summary>
   REACT_APP_FIREBASE_API_KEY=AIzaSyDjQwH8CCqeyhVXXWTOcptktmu7yCYD1ig
   REACT_APP_FIREBASE_AUTH_DOMAIN=hue-pic-it-ui.firebaseapp.com
@@ -50,6 +49,8 @@ In order to contribute, test, or run files locally please follow these instructi
   REACT_APP_FIREBASE_MESSAGING_SENDER_ID=495004319098
   REACT_APP_FIREBASE_APP_ID=1:495004319098:web:2267e8cbaff9293add2ac3
 </details>
+- `npm start`
+
 
 ## Contributors
 
