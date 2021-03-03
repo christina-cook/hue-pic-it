@@ -32,6 +32,25 @@ This app utilized:
 
 Our main focus was user login and authorization, with a fairly simple user interface and functionality of the site.
 
+## Set Up 
+In order to contribute, test, or run files locally please follow these instructions: 
+- Clone Down Repo
+- `npm install`
+- Cypress Testing: `npx cypress open`
+- A local environment will be required to run this app locally: 
+- Add `.env.local` file to main directory outside of source
+- Copy and Paste the code below into local environment file
+<details>
+  <Summary>Local Environment Code</summary>
+  REACT_APP_FIREBASE_API_KEY=AIzaSyDjQwH8CCqeyhVXXWTOcptktmu7yCYD1ig
+  REACT_APP_FIREBASE_AUTH_DOMAIN=hue-pic-it-ui.firebaseapp.com
+  REACT_APP_FIREBASE_DATABASE_URL=https://hue-pic-it-dev-default-rtdb.firebaseio.com
+  REACT_APP_FIREBASE_PROJECT_ID=hue-pic-it-ui
+  REACT_APP_FIREBASE_STORAGE_BUCKET=hue-pic-it-ui.appspot.com
+  REACT_APP_FIREBASE_MESSAGING_SENDER_ID=495004319098
+  REACT_APP_FIREBASE_APP_ID=1:495004319098:web:2267e8cbaff9293add2ac3
+</details>
+
 ## Contributors
 
 This app was coded by [Christina Cook](https://github.com/christina-cook), [Kevin Hartmann](https://github.com/kevinhartmann23), and [Alice Ruppert](https://github.com/srslie), following a [spec](https://frontend.turing.io/projects/module-3/stretch.html) by Turing School staff.
