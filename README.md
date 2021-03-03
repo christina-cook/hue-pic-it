@@ -44,15 +44,16 @@ This app was coded by [Christina Cook](https://github.com/christina-cook), [Kevi
 - 2-Step Verification
 - Color Wheel to replace cards for more specific Hex Codes
 
-
-
-
 ## In Action
->>>>>>>> ADD GIFS
 
-![GIF of login functionality]( )
+![GIF of login functionality google](https://media.giphy.com/media/STxKPwKKYwekG6yn6i/giphy.gif)
 
-![GIF of filtering images functionality]()
+![GIF of login functionality github](https://media.giphy.com/media/qovedeBtzL96tOiUDb/giphy.gif)
 
->>>>>> IF STRETCH
-![GIF of favoriting images functionality]()
+![GIF of account page](https://media.giphy.com/media/lI9JtENXdYyI3zRKmO/giphy.gif)
+
+![GIF of color photos](https://media.giphy.com/media/gjh7IrmqcPouI2HLrC/giphy.gif)
+
+![GIF of about page](https://media.giphy.com/media/vYLoLMsL7txVbC793r/giphy.gif)
+
+![GIF of responsive display](https://media.giphy.com/media/EUUfWU4HDlkLHXzNaZ/giphy.gif)
